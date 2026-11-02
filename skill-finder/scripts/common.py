@@ -1,4 +1,5 @@
 """Shared helpers for Skill Finder (standard library only, no import side effects)."""
+import json
 import re
 
 _KEY_RE = re.compile(r"^([^\s:#][^:]*?)\s*:(?:\s+(.*))?$")
@@ -193,3 +194,135 @@ def first_sentence(text):
     flat = " ".join(text.split())
     m = re.search(r"[.!?](?=\s|$)", flat)
     return (flat[:m.end()] if m else flat)[:200]
+
+
+_SOURCE_ID_RE = re.compile(r"^[a-z0-9-]+$")
+_SLUG_RE = re.compile(r"^[a-z0-9][a-z0-9-]*$")
+
+
+def _check_str(obj, key, path, errors, required=False):
+    """Type-check obj[key] as str; record one error string when wrong or (if required) missing."""
+    if key not in obj:
+        if required:
+            errors.append(f"{path}{key}: required")
+        return
+    if not isinstance(obj[key], str):
+        errors.append(f"{path}{key}: must be a string")
+
+
+def _check_str_list(obj, key, path, errors, required=False):
+    if key not in obj:
+        if required:
+            errors.append(f"{path}{key}: required")
+        return
+    val = obj[key]
+    if not isinstance(val, list):
+        errors.append(f"{path}{key}: must be a list of strings")
+        return
+    for n, item in enumerate(val):
+        if not isinstance(item, str):
+            errors.append(f"{path}{key}[{n}]: must be a string")
+
+
+def _check_slug(obj, key, path, errors):
+    _check_str(obj, key, path, errors, required=True)
+    if isinstance(obj.get(key), str) and not _SLUG_RE.match(obj[key]):
+        errors.append(f"{path}{key}: must match ^[a-z0-9][a-z0-9-]*$")
+
+
+def _check_object_list(data, key, errors):
+    """Return enumerated items of data[key] when it is a list of objects, recording errors otherwise."""
+    val = data.get(key)
+    if not isinstance(val, list):
+        errors.append(f"{key}: must be a list")
+        return []
+    items = []
+    for n, item in enumerate(val):
+        if isinstance(item, dict):
+            items.append((n, item))
+        else:
+            errors.append(f"{key}[{n}]: must be an object")
+    return items
+
+
+def validate_source(data):
+    """Return a list of error strings (JSON-path prefixed) for a source dict; empty means valid."""
+    if not isinstance(data, dict):
+        return ["<root>: must be an object"]
+    errors = []
+    _check_str(data, "source", "", errors, required=True)
+    if isinstance(data.get("source"), str) and not _SOURCE_ID_RE.match(data["source"]):
+        errors.append("source: must match ^[a-z0-9-]+$")
+    _check_str(data, "label", "", errors, required=True)
+    for key in ("homepage", "install", "install_all"):
+        _check_str(data, key, "", errors)
+    _check_str_list(data, "categories", "", errors)
+
+    if "skills" not in data:
+        errors.append("skills: required")
+    else:
+        for n, skill in _check_object_list(data, "skills", errors):
+            path = f"skills[{n}]."
+            _check_slug(skill, "slug", path, errors)
+            _check_str(skill, "summary", path, errors, required=True)
+            for key in ("name", "guide_slug", "category", "use_when"):
+                _check_str(skill, key, path, errors)
+            _check_str_list(skill, "aliases", path, errors)
+
+    if "journeys" in data:
+        for n, journey in _check_object_list(data, "journeys", errors):
+            path = f"journeys[{n}]."
+            _check_slug(journey, "slug", path, errors)
+            _check_str(journey, "name", path, errors, required=True)
+            _check_str_list(journey, "skills", path, errors, required=True)
+            for key in ("tagline", "fits"):
+                _check_str(journey, key, path, errors)
+            if "phases" in journey and (isinstance(journey["phases"], bool)
+                                        or not isinstance(journey["phases"], int)):
+                errors.append(f"{path}phases: must be an integer")
+
+    if "routes" in data:
+        for n, route in _check_object_list(data, "routes", errors):
+            path = f"routes[{n}]."
+            _check_str(route, "name", path, errors, required=True)
+            for key in ("shortcut", "note"):
+                _check_str(route, key, path, errors)
+            if "steps" not in route:
+                errors.append(f"{path}steps: required")
+            elif not isinstance(route["steps"], list):
+                errors.append(f"{path}steps: must be a list of [slug, text] pairs")
+            else:
+                for m, step in enumerate(route["steps"]):
+                    if not (isinstance(step, list) and len(step) == 2
+                            and all(isinstance(x, str) for x in step)):
+                        errors.append(f"{path}steps[{m}]: must be a [slug, text] pair of strings")
+    return errors
+
+
+def load_sources(sources_dir):
+    """Load valid *.json sources in sorted filename order. Return (sources, warnings).
+
+    Each unreadable/invalid file yields exactly one warning "<file>: <error(s)>".
+    """
+    sources, warnings = [], []
+    for path in sorted(sources_dir.glob("*.json")):
+        if path.name.startswith("_"):
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError) as exc:
+            warnings.append(f"{path.name}: {exc}")
+            continue
+        errors = validate_source(data)
+        if errors:
+            warnings.append(f"{path.name}: " + "; ".join(errors))
+            continue
+        sources.append(data)
+    return sources, warnings
+
+
+def expand_install(template, slug, agent):
+    """Fill {slug}/{agent} in an install template; None stays None."""
+    if template is None:
+        return None
+    return template.replace("{slug}", slug).replace("{agent}", agent)

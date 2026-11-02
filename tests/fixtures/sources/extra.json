@@ -1,0 +1,18 @@
+{
+  "source": "extra",
+  "label": "Extra test source",
+  "install": "npx skills add acme/skills -s {slug} -g -a {agent}",
+  "skills": [
+    {
+      "slug": "refactoring-ui",
+      "summary": "EXTRA summary should lose to wondel",
+      "use_when": "EXTRA"
+    },
+    {
+      "slug": "acme-pricing-wizard",
+      "summary": "Pick a price tier",
+      "use_when": "Use when choosing between pricing tiers",
+      "aliases": ["pricing tiers"]
+    }
+  ]
+}
