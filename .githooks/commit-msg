@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Strips AI-attribution trailers before the commit is written, so they never
+# land in history regardless of which tool proposed them.
+#   Enable once per clone:  git config core.hooksPath .githooks
+set -euo pipefail
+FILE="$1"
+
+# Co-Authored-By / Co-authored-by (any casing on the "By")
+if grep -qi "^Co-authored-by:" "$FILE"; then
+  grep -vi "^Co-authored-by:" "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+fi
+
+# The "generated with" footer some tools add
+if grep -qi "generated with \[claude code\]" "$FILE"; then
+  grep -vi "generated with \[claude code\]" "$FILE" > "$FILE.tmp" && mv "$FILE.tmp" "$FILE"
+fi
+
+# Collapse any blank lines the removal left at the end of the message
+sed -i.bak -e :a -e '/^\n*$/{$d;N;};/\n$/ba' "$FILE" 2>/dev/null && rm -f "$FILE.bak" || true
