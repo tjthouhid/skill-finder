@@ -162,7 +162,12 @@ def _parse_map(lines, i, indent, depth):
         elif _BLOCK_RE.match(val):
             result[key], i = _parse_block_scalar(val, lines, i, indent)
         else:
-            result[key] = val
+            parts = [val]
+            while i < n and lines[i].strip() and not lines[i].lstrip().startswith("#") \
+                    and _indent(lines[i]) > indent:
+                parts.append(lines[i].strip())
+                i += 1
+            result[key] = " ".join(parts)
     return result, i
 
 

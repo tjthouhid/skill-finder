@@ -29,6 +29,39 @@ class ParseFrontmatter(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_frontmatter("---\nname: x\nno end")
 
+    def test_plain_multiline_scalar_is_folded(self):
+        meta, _ = parse_frontmatter("---\ndescription: Does a thing\n  and continues here: yes\nname: x\n---\n")
+        self.assertEqual(meta["description"], "Does a thing and continues here: yes")
+        self.assertEqual(meta["name"], "x")
+
+    def test_literal_block_keeps_newlines(self):
+        meta, _ = parse_frontmatter("---\nl: |\n  one\n  two\nn: y\n---\n")
+        self.assertEqual(meta["l"], "one\ntwo")
+        self.assertEqual(meta["n"], "y")
+
+    def test_comment_lines_ignored(self):
+        meta, _ = parse_frontmatter("---\n# top\nname: x\n  # indented\nother: y\n---\n")
+        self.assertEqual(meta, {"name": "x", "other": "y"})
+
+    def test_list_at_key_indent(self):
+        meta, _ = parse_frontmatter("---\ntools:\n- a\n- 'b c'\nname: x\n---\n")
+        self.assertEqual(meta["tools"], ["a", "b c"])
+        self.assertEqual(meta["name"], "x")
+
+    def test_unclosed_quote_kept_raw(self):
+        meta, _ = parse_frontmatter("---\na: 'unclosed\nb: 1\n---\nx")
+        self.assertEqual(meta["a"], "'unclosed")
+        self.assertEqual(meta["b"], "1")
+
+    def test_third_nesting_level_kept_raw(self):
+        meta, _ = parse_frontmatter("---\nm:\n  k:\n    deep: 1\n  j: 2\n---\n")
+        self.assertEqual(meta["m"], {"k": "deep: 1", "j": "2"})
+
+    def test_crlf_input(self):
+        meta, body = parse_frontmatter("---\r\nname: x\r\ndescription: 'a\r\n  b'\r\n---\r\n# Body\r\n")
+        self.assertEqual(meta, {"name": "x", "description": "a b"})
+        self.assertEqual(body.strip(), "# Body")
+
 class FirstSentence(unittest.TestCase):
     def test_cuts_at_sentence_end(self):
         self.assertEqual(first_sentence("Do a thing. Then another."), "Do a thing.")
