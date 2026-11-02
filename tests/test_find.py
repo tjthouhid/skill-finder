@@ -154,10 +154,17 @@ class FindTests(unittest.TestCase):
         self.assertEqual(counts, sorted(counts, reverse=True))
 
     def test_non_ascii_query_no_crash(self):
-        res = search(INDEX, "ওয়েবসাইট ডিজাইন 🎨")
-        self.assertIsInstance(res, dict)
-        out = render_markdown(res, "claude", INDEX)
-        self.assertTrue("No match" in out or "## Skills" in out)
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d) / "skills.json"
+            p.write_text(json.dumps(_local_index()), encoding="utf-8")
+            out, err = io.StringIO(), io.StringIO()
+            with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+                rc = main(["ওয়েবসাইট ডিজাইন 🎨", "--index", str(p)])
+        self.assertEqual(rc, 0, err.getvalue())
+        prefix = "No match. Categories: "
+        self.assertTrue(out.getvalue().startswith(prefix), out.getvalue())
+        listed = out.getvalue()[len(prefix):].strip().split(", ")
+        self.assertTrue(listed[0] and set(listed) <= set(INDEX["categories"]), listed)
 
     def test_missing_index_exit_2(self):
         with tempfile.TemporaryDirectory() as d:
