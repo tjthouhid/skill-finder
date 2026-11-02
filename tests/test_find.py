@@ -10,7 +10,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "skill-finder" / "scripts"))
 from common import load_sources
 from build_index import build_index
-from find import expand, main, render_markdown, search, tokenize
+from find import _bigrams, expand, main, render_markdown, score_journey, score_skill, search, tokenize
 
 FIX = ROOT / "tests" / "fixtures"
 REAL_SOURCES = ROOT / "skill-finder" / "data" / "sources"
@@ -86,6 +86,30 @@ class FindTests(unittest.TestCase):
         )
         self.assertIn("claude ✓", out)
         self.assertNotIn("Install (claude)", out)
+
+    def test_bigram_bonus_on_token_boundaries(self):
+        rec = {"summary": "refactor old code safely"}
+        terms = ["zzzz"]
+        self.assertEqual(score_skill(terms, ["old code"], rec), 2)
+        across = {"summary": "scan barcode older items"}
+        self.assertEqual(score_skill(terms, ["code old"], across), 0)
+        self.assertEqual(_bigrams(["code", "old"]), ["code old"])
+
+    def test_no_journey_or_route_caps(self):
+        res = search(INDEX, "design website landing page", top=50)
+        q = "design website landing page"
+        tokens = tokenize(q)
+        eligible = [
+            j for j in INDEX["journeys"]
+            if score_journey(expand(tokens, q), _bigrams(tokens), j) >= 1.0
+        ]
+        self.assertEqual(len(res["journeys"]), len(eligible))
+        self.assertEqual(len(search(INDEX, q, top=2)["journeys"]), min(2, len(eligible)))
+        top3 = {r["slug"] for _, r in res["skills"][:3]}
+        want = [r for r in INDEX["routes"] if top3 & {s[0] for s in r["steps"]}]
+        self.assertEqual(len(res["routes"]), len(want))
+        counts = [len(top3 & {s[0] for s in r["steps"]}) for r in res["routes"]]
+        self.assertEqual(counts, sorted(counts, reverse=True))
 
     def test_non_ascii_query_no_crash(self):
         res = search(INDEX, "ওয়েবসাইট ডিজাইন 🎨")

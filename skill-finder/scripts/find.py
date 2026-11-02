@@ -47,8 +47,6 @@ FIELD_WEIGHTS = (
 )
 JOURNEY_WEIGHTS = (("name", 4), ("tagline", 3), ("fits", 3))
 MIN_SCORE = 1.0
-MAX_JOURNEYS = 3
-MAX_ROUTES = 5
 
 _SPLIT = re.compile(r"[\W_]+", re.UNICODE)
 
@@ -114,7 +112,7 @@ def _score(terms, bigrams, texts_weights):
         total += score_text(terms, text, weight)
         joined.append(" ".join(tokenize(text)))
     for bg in bigrams:
-        if any(bg in j for j in joined):
+        if any((" " + bg + " ") in (" " + j + " ") for j in joined):
             total += 2
     return total
 
@@ -146,12 +144,15 @@ def search(index, query, top=8):
         if s >= MIN_SCORE:
             journeys.append((s, j))
     journeys.sort(key=lambda p: (-p[0], p[1].get("slug", "")))
-    journeys = journeys[: min(top, MAX_JOURNEYS)]
+    journeys = journeys[:top]
     top3 = {r["slug"] for _, r in skills[:3]}
-    routes = [
-        r for r in index.get("routes", [])
-        if top3 & {step[0] for step in r.get("steps", [])}
-    ][:MAX_ROUTES]
+    ranked = []
+    for pos, r in enumerate(index.get("routes", [])):
+        n = len(top3 & {step[0] for step in r.get("steps", [])})
+        if n:
+            ranked.append((-n, pos, r))
+    ranked.sort(key=lambda t: (t[0], t[1]))
+    routes = [r for _, _, r in ranked]
     return {"skills": skills, "journeys": journeys, "routes": routes}
 
 
