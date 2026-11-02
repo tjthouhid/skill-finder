@@ -330,8 +330,11 @@ def expand_install(template, slug, agent):
 
 
 def default_roots():
-    """Default skill roots per agent (existing or not): Claude user + plugin caches, Codex user."""
+    """Default skill roots per agent (existing or not): Claude user + plugin caches, Codex user.
+
+    Codex reads ~/.agents/skills as well, and `npx skills add -a codex` installs there.
+    """
     home = Path.home()
     claude = [home / ".claude" / "skills"]
     claude += sorted((home / ".claude" / "plugins" / "cache").glob("*/*/*/skills"))
-    return {"claude": claude, "codex": [home / ".codex" / "skills"]}
+    return {"claude": claude, "codex": [home / ".codex" / "skills", home / ".agents" / "skills"]}

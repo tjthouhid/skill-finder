@@ -1,6 +1,7 @@
 import sys, pathlib, unittest
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "skill-finder" / "scripts"))
-from common import parse_frontmatter, first_sentence
+from unittest import mock
+from common import default_roots, first_sentence, parse_frontmatter
 
 class ParseFrontmatter(unittest.TestCase):
     def test_single_quoted_multiline_with_colons_and_doubled_quotes(self):
@@ -67,3 +68,10 @@ class FirstSentence(unittest.TestCase):
         self.assertEqual(first_sentence("Do a thing. Then another."), "Do a thing.")
     def test_version_number_not_a_boundary(self):
         self.assertEqual(first_sentence("Uses v1.5 tokens. More."), "Uses v1.5 tokens.")
+
+class DefaultRoots(unittest.TestCase):
+    def test_codex_scans_codex_and_agents_skill_folders(self):
+        home = pathlib.Path("/home/someone")
+        with mock.patch.object(pathlib.Path, "home", return_value=home):
+            roots = default_roots()
+        self.assertEqual(roots["codex"], [home / ".codex" / "skills", home / ".agents" / "skills"])
