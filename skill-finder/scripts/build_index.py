@@ -33,8 +33,7 @@ def _plugin_ref(path):
     """'<plugin>@<marketplace>' when path sits under .../plugins/cache/<marketplace>/<plugin>/."""
     parts = path.parts
     for i, part in enumerate(parts):
-        is_cache = (part == "cache" and i > 0 and parts[i - 1] == "plugins") or part == "plugin_cache"
-        if is_cache and i + 2 < len(parts) - 1:
+        if part == "cache" and i > 0 and parts[i - 1] == "plugins" and i + 2 < len(parts) - 1:
             return f"{parts[i + 2]}@{parts[i + 1]}"
     return None
 

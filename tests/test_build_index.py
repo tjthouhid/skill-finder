@@ -15,7 +15,7 @@ from build_index import build_index, detect_source, main, scan_root
 FIX = ROOT / "tests" / "fixtures"
 REAL_SOURCES = ROOT / "skill-finder" / "data" / "sources"
 CLAUDE = FIX / "claude_skills"
-PLUGINS = FIX / "plugin_cache" / "mkt" / "superpowers" / "7.0.0" / "skills"
+PLUGINS = FIX / "plugins" / "cache" / "mkt" / "superpowers" / "7.0.0" / "skills"
 CODEX = FIX / "codex_skills"
 
 
