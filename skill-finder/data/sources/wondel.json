@@ -1,0 +1,1061 @@
+{
+  "source": "wondel",
+  "label": "Wondel.ai skills",
+  "homepage": "https://skills.wondel.ai/skills",
+  "install": "npx skills add wondelai/skills -s {slug} -g -a {agent}",
+  "install_all": "npx skills add wondelai/skills --all --global",
+  "categories": [
+    "Design & UX",
+    "Marketing & Messaging",
+    "Sales & Persuasion",
+    "Product & Innovation",
+    "Strategy & Growth",
+    "Team & Operations",
+    "Code Quality",
+    "Architecture & Systems"
+  ],
+  "skills": [
+    {
+      "name": "Refactoring UI",
+      "guide_slug": "refactoring-ui",
+      "slug": "refactoring-ui",
+      "category": "Design & UX",
+      "summary": "Make interfaces look consistent and intentional: spacing, color, hierarchy, and reusable visual rules.",
+      "use_when": "Use when the UI works but looks uneven, cluttered, or “generated.”",
+      "aliases": [
+        "refactoring ui"
+      ]
+    },
+    {
+      "name": "iOS HIG Design",
+      "guide_slug": "ios-hig-design",
+      "slug": "ios-hig-design",
+      "category": "Design & UX",
+      "summary": "Design iPhone and iPad interfaces using Apple’s platform conventions for navigation, controls, accessibility, and layout.",
+      "use_when": "Use when building or reviewing an Apple-platform app.",
+      "aliases": [
+        "ios hig design"
+      ]
+    },
+    {
+      "name": "UX Heuristics",
+      "guide_slug": "ux-heuristics",
+      "slug": "ux-heuristics",
+      "category": "Design & UX",
+      "summary": "Review screens for common usability problems such as unclear labels, weak feedback, or unnecessary memory load.",
+      "use_when": "Use when people get lost, abandon forms, or need help to complete tasks.",
+      "aliases": [
+        "ux heuristics"
+      ]
+    },
+    {
+      "name": "Web Typography",
+      "guide_slug": "web-typography",
+      "slug": "web-typography",
+      "category": "Design & UX",
+      "summary": "Choose readable type, line length, hierarchy, and web font loading approaches.",
+      "use_when": "Use for content-heavy sites or when text is hard to read.",
+      "aliases": [
+        "web typography"
+      ]
+    },
+    {
+      "name": "Design of Everyday Things",
+      "guide_slug": "design-of-everyday-things",
+      "slug": "design-everyday-things",
+      "category": "Design & UX",
+      "summary": "Make controls understandable through clear affordances, feedback, and sensible mapping.",
+      "use_when": "Use when users click the wrong thing or don’t know what a control does.",
+      "aliases": [
+        "design-of-everyday-things",
+        "design of everyday things"
+      ]
+    },
+    {
+      "name": "Top Design",
+      "guide_slug": "top-design",
+      "slug": "top-design",
+      "category": "Design & UX",
+      "summary": "Push a polished web design toward a distinctive, memorable art direction.",
+      "use_when": "Use for launch pages or brand moments after clarity and usability are sound.",
+      "aliases": [
+        "top design"
+      ]
+    },
+    {
+      "name": "Lean UX",
+      "guide_slug": "lean-ux",
+      "slug": "lean-ux",
+      "category": "Design & UX",
+      "summary": "Turn assumptions about a feature into small, testable design experiments.",
+      "use_when": "Use when the team might be building the wrong experience.",
+      "aliases": [
+        "lean ux"
+      ]
+    },
+    {
+      "name": "Microinteractions",
+      "guide_slug": "microinteractions",
+      "slug": "microinteractions",
+      "category": "Design & UX",
+      "summary": "Design feedback for small actions: saving, loading, errors, toggles, and transitions.",
+      "use_when": "Use when an app feels unresponsive or small actions lack clear feedback.",
+      "aliases": []
+    },
+    {
+      "name": "Steve Jobs Design Review",
+      "guide_slug": "steve-jobs-design-review",
+      "slug": "steve-jobs-design-review",
+      "category": "Design & UX",
+      "summary": "Run a sharp final product/design critique that surfaces weak details and a concrete cut list.",
+      "use_when": "Use before launch or review when “good enough” needs a clear verdict.",
+      "aliases": [
+        "steve jobs design review"
+      ]
+    },
+    {
+      "name": "StoryBrand Messaging",
+      "guide_slug": "storybrand",
+      "slug": "storybrand-messaging",
+      "category": "Marketing & Messaging",
+      "summary": "Explain a product clearly by framing the customer as the main character and the company as a guide.",
+      "use_when": "Use when the homepage talks about the company but visitors don’t understand the benefit.",
+      "aliases": [
+        "storybrand",
+        "storybrand messaging"
+      ]
+    },
+    {
+      "name": "Made to Stick",
+      "guide_slug": "made-to-stick",
+      "slug": "made-to-stick",
+      "category": "Marketing & Messaging",
+      "summary": "Make ideas clearer and easier to remember using concrete, credible examples and stories.",
+      "use_when": "Use when people hear the pitch but can’t repeat it later.",
+      "aliases": [
+        "made to stick"
+      ]
+    },
+    {
+      "name": "Contagious",
+      "guide_slug": "contagious",
+      "slug": "contagious",
+      "category": "Marketing & Messaging",
+      "summary": "Find product or message features that give people a reason to talk about and share them.",
+      "use_when": "Use when referrals or word of mouth are an important growth channel.",
+      "aliases": []
+    },
+    {
+      "name": "1-Page Marketing Plan",
+      "guide_slug": "1-page-marketing-plan",
+      "slug": "one-page-marketing",
+      "category": "Marketing & Messaging",
+      "summary": "Map marketing from target audience through lead capture, sales, retention, and referrals.",
+      "use_when": "Use when marketing is a loose set of tactics without a connected plan.",
+      "aliases": [
+        "1-page-marketing-plan",
+        "1-page marketing plan"
+      ]
+    },
+    {
+      "name": "Scorecard Marketing",
+      "guide_slug": "scorecard-marketing",
+      "slug": "scorecard-marketing",
+      "category": "Marketing & Messaging",
+      "summary": "Create a scored assessment or quiz that gives prospects a useful result and helps qualify leads.",
+      "use_when": "Use when a generic downloadable guide is not attracting useful leads.",
+      "aliases": [
+        "scorecard marketing"
+      ]
+    },
+    {
+      "name": "Obviously Awesome",
+      "guide_slug": "obviously-awesome",
+      "slug": "obviously-awesome",
+      "category": "Marketing & Messaging",
+      "summary": "Clarify category, target customer, alternatives, and differentiated value.",
+      "use_when": "Use when prospects don’t understand what the product replaces or why it is different.",
+      "aliases": [
+        "obviously awesome"
+      ]
+    },
+    {
+      "name": "$100M Offers",
+      "guide_slug": "100m-offers",
+      "slug": "hundred-million-offers",
+      "category": "Sales & Persuasion",
+      "summary": "Improve the package, value, guarantees, and presentation of an offer.",
+      "use_when": "Use when qualified buyers see the offer as too expensive or incomplete. Validate price first.",
+      "aliases": [
+        "100m-offers",
+        "$100m offers"
+      ]
+    },
+    {
+      "name": "Negotiation",
+      "guide_slug": "negotiation",
+      "slug": "negotiation",
+      "category": "Sales & Persuasion",
+      "summary": "Prepare for difficult sales or partnership conversations using listening, calibrated questions, and structured offers.",
+      "use_when": "Use for high-stakes negotiations, not routine messages.",
+      "aliases": []
+    },
+    {
+      "name": "Influence Psychology",
+      "guide_slug": "influence-psychology",
+      "slug": "influence-psychology",
+      "category": "Sales & Persuasion",
+      "summary": "Understand persuasion principles and apply them ethically to pages, emails, and onboarding.",
+      "use_when": "Use when people need trust or motivation; avoid fake scarcity or manipulative pressure.",
+      "aliases": [
+        "influence psychology"
+      ]
+    },
+    {
+      "name": "Predictable Revenue",
+      "guide_slug": "predictable-revenue",
+      "slug": "predictable-revenue",
+      "category": "Sales & Persuasion",
+      "summary": "Build a repeatable outbound sales pipeline and work backwards from revenue goals.",
+      "use_when": "Use when sales depend on luck or founder-only networking.",
+      "aliases": [
+        "predictable revenue"
+      ]
+    },
+    {
+      "name": "CRO Methodology",
+      "guide_slug": "cro-methodology",
+      "slug": "cro-methodology",
+      "category": "Sales & Persuasion",
+      "summary": "Diagnose conversion problems and prioritize changes as testable hypotheses.",
+      "use_when": "Use when traffic is arriving but people fail to take the intended next step.",
+      "aliases": [
+        "cro methodology"
+      ]
+    },
+    {
+      "name": "Monetizing Innovation",
+      "guide_slug": "monetizing-innovation",
+      "slug": "monetizing-innovation",
+      "category": "Sales & Persuasion",
+      "summary": "Research willingness to pay and design product/price choices around customer value.",
+      "use_when": "Use before or during product development, before settling on a price.",
+      "aliases": [
+        "monetizing innovation"
+      ]
+    },
+    {
+      "name": "Jobs to Be Done",
+      "guide_slug": "jobs-to-be-done",
+      "slug": "jobs-to-be-done",
+      "category": "Product & Innovation",
+      "summary": "Understand what progress customers are trying to make and what they use instead.",
+      "use_when": "Use when deciding what problem a product or feature should solve.",
+      "aliases": [
+        "jobs to be done"
+      ]
+    },
+    {
+      "name": "Hooked UX",
+      "guide_slug": "hooked-ux",
+      "slug": "hooked-ux",
+      "category": "Product & Innovation",
+      "summary": "Analyze a product’s cue, action, reward, and investment loop.",
+      "use_when": "Use when repeat use is part of genuine user value; don’t manufacture compulsive use.",
+      "aliases": [
+        "hooked ux"
+      ]
+    },
+    {
+      "name": "Improve Retention",
+      "guide_slug": "improve-retention",
+      "slug": "improve-retention",
+      "category": "Product & Innovation",
+      "summary": "Apply behavior design to help users repeat a beneficial action with manageable prompts and ability.",
+      "use_when": "Use when users try the product but do not return or complete the core habit.",
+      "aliases": [
+        "improve retention"
+      ]
+    },
+    {
+      "name": "Lean Startup",
+      "guide_slug": "lean-startup",
+      "slug": "lean-startup",
+      "category": "Product & Innovation",
+      "summary": "Test risky business assumptions through short build-measure-learn experiments.",
+      "use_when": "Use when an idea is uncertain and a full build would be costly.",
+      "aliases": [
+        "lean startup"
+      ]
+    },
+    {
+      "name": "Design Sprint",
+      "guide_slug": "design-sprint",
+      "slug": "design-sprint",
+      "category": "Product & Innovation",
+      "summary": "Run a time-boxed process to map a problem, sketch, choose, prototype, and test with users.",
+      "use_when": "Use when a team needs evidence on one focused product question quickly.",
+      "aliases": [
+        "design sprint"
+      ]
+    },
+    {
+      "name": "Continuous Discovery",
+      "guide_slug": "continuous-discovery",
+      "slug": "continuous-discovery",
+      "category": "Product & Innovation",
+      "summary": "Make customer interviews and opportunity testing a regular product practice.",
+      "use_when": "Use when research happens only in occasional projects or roadmaps lack evidence.",
+      "aliases": [
+        "continuous discovery"
+      ]
+    },
+    {
+      "name": "Inspired",
+      "guide_slug": "inspired",
+      "slug": "inspired-product",
+      "category": "Product & Innovation",
+      "summary": "Organize product work around customer problems and discovery before delivery commitments.",
+      "use_when": "Use when teams are given feature lists without a clear outcome or product strategy.",
+      "aliases": [
+        "inspired"
+      ]
+    },
+    {
+      "name": "The Mom Test",
+      "guide_slug": "the-mom-test",
+      "slug": "mom-test",
+      "category": "Product & Innovation",
+      "summary": "Ask customer interview questions that reveal real past behavior instead of polite opinions.",
+      "use_when": "Use before building or when validating demand.",
+      "aliases": [
+        "the-mom-test",
+        "the mom test"
+      ]
+    },
+    {
+      "name": "The 37signals Way",
+      "guide_slug": "37signals-way",
+      "slug": "37signals-way",
+      "category": "Product & Innovation",
+      "summary": "Keep product scope small, work in appetite-bounded chunks, and avoid unnecessary process.",
+      "use_when": "Use when plans keep expanding or projects have no clear finish line.",
+      "aliases": [
+        "the 37signals way"
+      ]
+    },
+    {
+      "name": "Lean Analytics",
+      "guide_slug": "lean-analytics",
+      "slug": "lean-analytics",
+      "category": "Product & Innovation",
+      "summary": "Choose a meaningful metric and a threshold that should change a decision.",
+      "use_when": "Use when dashboards are full but nobody knows whether progress is real.",
+      "aliases": [
+        "lean analytics"
+      ]
+    },
+    {
+      "name": "Crossing the Chasm",
+      "guide_slug": "crossing-the-chasm",
+      "slug": "crossing-the-chasm",
+      "category": "Strategy & Growth",
+      "summary": "Choose a focused customer segment to move from early adopters toward mainstream adoption.",
+      "use_when": "Use when early enthusiasts buy but the next market segment does not.",
+      "aliases": [
+        "crossing the chasm"
+      ]
+    },
+    {
+      "name": "Blue Ocean Strategy",
+      "guide_slug": "blue-ocean-strategy",
+      "slug": "blue-ocean-strategy",
+      "category": "Strategy & Growth",
+      "summary": "Find value customers want that avoids competing only on the same factors as rivals.",
+      "use_when": "Use in crowded markets where competition mostly drives price down.",
+      "aliases": [
+        "blue ocean strategy"
+      ]
+    },
+    {
+      "name": "Cold Start Problem",
+      "guide_slug": "cold-start-problem",
+      "slug": "cold-start-problem",
+      "category": "Strategy & Growth",
+      "summary": "Plan how a network product gets its first useful users on each side and reaches critical mass.",
+      "use_when": "Use for marketplaces, social products, or other products that need participants to be valuable.",
+      "aliases": [
+        "cold start problem"
+      ]
+    },
+    {
+      "name": "Good Strategy Bad Strategy",
+      "guide_slug": "good-strategy-bad-strategy",
+      "slug": "good-strategy-bad-strategy",
+      "category": "Strategy & Growth",
+      "summary": "Turn a vague ambition into a diagnosis, guiding policy, and coordinated actions.",
+      "use_when": "Use when priorities are numerous but the actual constraint is unclear.",
+      "aliases": [
+        "good strategy bad strategy"
+      ]
+    },
+    {
+      "name": "Traction EOS",
+      "guide_slug": "traction-eos",
+      "slug": "traction-eos",
+      "category": "Team & Operations",
+      "summary": "Set company priorities, owners, scorecards, and a regular operating meeting rhythm.",
+      "use_when": "Use when a sufficiently sized business needs consistent execution and accountability.",
+      "aliases": [
+        "traction eos"
+      ]
+    },
+    {
+      "name": "Drive Motivation",
+      "guide_slug": "drive-motivation",
+      "slug": "drive-motivation",
+      "category": "Team & Operations",
+      "summary": "Review whether work supports autonomy, mastery, and purpose rather than relying only on rewards.",
+      "use_when": "Use when motivation or initiative is slipping; pair with real conversations.",
+      "aliases": [
+        "drive motivation"
+      ]
+    },
+    {
+      "name": "High Output Management",
+      "guide_slug": "high-output-management",
+      "slug": "high-output-management",
+      "category": "Team & Operations",
+      "summary": "Improve manager leverage, delegation, one-to-ones, and team operating practices.",
+      "use_when": "Use when a manager is a bottleneck or the team’s time is not producing enough output.",
+      "aliases": [
+        "high output management"
+      ]
+    },
+    {
+      "name": "Team Topologies",
+      "guide_slug": "team-topologies",
+      "slug": "team-topologies",
+      "category": "Team & Operations",
+      "summary": "Shape team boundaries and interaction patterns to reduce handoffs and cognitive overload.",
+      "use_when": "Use when work gets stuck across several engineering teams.",
+      "aliases": [
+        "team topologies"
+      ]
+    },
+    {
+      "name": "Clean Code",
+      "guide_slug": "clean-code",
+      "slug": "clean-code",
+      "category": "Code Quality",
+      "summary": "Improve names, functions, errors, and readability so code is easier to understand.",
+      "use_when": "Use when code works but is confusing or costly to review.",
+      "aliases": [
+        "clean code"
+      ]
+    },
+    {
+      "name": "Pragmatic Programmer",
+      "guide_slug": "pragmatic-programmer",
+      "slug": "pragmatic-programmer",
+      "category": "Code Quality",
+      "summary": "Apply practical engineering habits such as reducing duplicated knowledge and proving paths end to end.",
+      "use_when": "Use as broad guidance for building and maintaining software.",
+      "aliases": [
+        "pragmatic programmer"
+      ]
+    },
+    {
+      "name": "Refactoring",
+      "guide_slug": "refactoring",
+      "slug": "refactoring-patterns",
+      "category": "Code Quality",
+      "summary": "Restructure code in small behavior-preserving steps.",
+      "use_when": "Use when tests exist and the code’s structure needs to improve.",
+      "aliases": [
+        "refactoring"
+      ]
+    },
+    {
+      "name": "Software Design",
+      "guide_slug": "software-design",
+      "slug": "software-design-philosophy",
+      "category": "Code Quality",
+      "summary": "Reduce complexity by designing modules that hide difficult details behind useful interfaces.",
+      "use_when": "Use when every change touches too many parts or abstractions make the system harder.",
+      "aliases": [
+        "software-design",
+        "software design"
+      ]
+    },
+    {
+      "name": "Legacy Code",
+      "guide_slug": "legacy-code",
+      "slug": "working-with-legacy-code",
+      "category": "Code Quality",
+      "summary": "Find safe seams and capture current behavior before changing untested code.",
+      "use_when": "Use before modifying old code that has little or no test coverage.",
+      "aliases": [
+        "legacy-code",
+        "legacy code"
+      ]
+    },
+    {
+      "name": "Clean Architecture",
+      "guide_slug": "clean-architecture",
+      "slug": "clean-architecture",
+      "category": "Architecture & Systems",
+      "summary": "Keep core business rules testable and independent from frameworks and databases.",
+      "use_when": "Use when the framework must boot just to test a business rule or infrastructure is hard to replace.",
+      "aliases": [
+        "clean architecture"
+      ]
+    },
+    {
+      "name": "Domain-Driven Design",
+      "guide_slug": "domain-driven-design",
+      "slug": "domain-driven-design",
+      "category": "Architecture & Systems",
+      "summary": "Model complicated business rules and define boundaries with a shared vocabulary.",
+      "use_when": "Use when one model or class is trying to represent different parts of the business.",
+      "aliases": [
+        "domain-driven design"
+      ]
+    },
+    {
+      "name": "Data-Intensive Apps",
+      "guide_slug": "ddia-systems",
+      "slug": "ddia-systems",
+      "category": "Architecture & Systems",
+      "summary": "Reason about databases, replication, consistency, partitioning, and data pipelines.",
+      "use_when": "Use when concurrent updates, stale reads, storage choice, or hot partitions matter.",
+      "aliases": [
+        "data-intensive apps"
+      ]
+    },
+    {
+      "name": "System Design",
+      "guide_slug": "system-design",
+      "slug": "system-design",
+      "category": "Architecture & Systems",
+      "summary": "Estimate traffic, storage, and major components before building a system.",
+      "use_when": "Use when planning capacity or designing a system that may serve significant traffic.",
+      "aliases": [
+        "system design"
+      ]
+    },
+    {
+      "name": "Release It!",
+      "guide_slug": "release-it",
+      "slug": "release-it",
+      "category": "Architecture & Systems",
+      "summary": "Protect production services with timeouts, retries, circuit breakers, resource limits, and health checks.",
+      "use_when": "Use whenever the app depends on networks or external services, especially before launch.",
+      "aliases": [
+        "release it!"
+      ]
+    },
+    {
+      "name": "High Perf Browser",
+      "guide_slug": "high-perf-browser",
+      "slug": "high-perf-browser",
+      "category": "Architecture & Systems",
+      "summary": "Improve the time between a browser request and a usable page using networking and resource loading choices.",
+      "use_when": "Use when the backend is responsive but the browser page still paints slowly.",
+      "aliases": [
+        "high perf browser"
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "slug": "create-business",
+      "name": "Create a Business",
+      "tagline": "Raw idea → validated, positioned, priced business",
+      "phases": 10,
+      "skills": [
+        "jobs-to-be-done",
+        "mom-test",
+        "design-sprint",
+        "lean-startup",
+        "good-strategy-bad-strategy",
+        "blue-ocean-strategy",
+        "obviously-awesome",
+        "hundred-million-offers",
+        "monetizing-innovation",
+        "crossing-the-chasm"
+      ],
+      "fits": "new business idea to test and position before investing"
+    },
+    {
+      "slug": "create-website",
+      "name": "Create a Website",
+      "tagline": "Blank page → clear, designed, conversion-focused website",
+      "phases": 10,
+      "skills": [
+        "one-page-marketing",
+        "storybrand-messaging",
+        "made-to-stick",
+        "top-design",
+        "web-typography",
+        "refactoring-ui",
+        "ux-heuristics",
+        "cro-methodology",
+        "scorecard-marketing",
+        "steve-jobs-design-review"
+      ],
+      "fits": "new marketing site or landing page from scratch"
+    },
+    {
+      "slug": "create-app",
+      "name": "Create an App",
+      "tagline": "Idea → validated app with deliberate architecture",
+      "phases": 10,
+      "skills": [
+        "lean-startup",
+        "design-sprint",
+        "clean-architecture",
+        "domain-driven-design",
+        "clean-code",
+        "pragmatic-programmer",
+        "system-design",
+        "ios-hig-design",
+        "37signals-way",
+        "software-design-philosophy"
+      ],
+      "fits": "new app idea to validate and give sound foundations"
+    },
+    {
+      "slug": "improve-business",
+      "name": "Improve a Business",
+      "tagline": "Diagnose and address a plateaued business",
+      "phases": 8,
+      "skills": [
+        "good-strategy-bad-strategy",
+        "traction-eos",
+        "high-output-management",
+        "team-topologies",
+        "drive-motivation",
+        "lean-analytics",
+        "negotiation",
+        "monetizing-innovation"
+      ],
+      "fits": "established business that has plateaued"
+    },
+    {
+      "slug": "improve-website",
+      "name": "Improve a Website",
+      "tagline": "Find and fix evidence-backed website problems",
+      "phases": 8,
+      "skills": [
+        "cro-methodology",
+        "ux-heuristics",
+        "refactoring-ui",
+        "web-typography",
+        "storybrand-messaging",
+        "high-perf-browser",
+        "made-to-stick",
+        "design-everyday-things"
+      ],
+      "fits": "existing site with traffic but weak results"
+    },
+    {
+      "slug": "improve-app",
+      "name": "Improve an App",
+      "tagline": "Improve product fit, usability, copy, and experience",
+      "phases": 9,
+      "skills": [
+        "jobs-to-be-done",
+        "ux-heuristics",
+        "design-everyday-things",
+        "refactoring-ui",
+        "microinteractions",
+        "made-to-stick",
+        "influence-psychology",
+        "high-perf-browser",
+        "steve-jobs-design-review"
+      ],
+      "fits": "live app whose product fit, usability or copy is weak"
+    },
+    {
+      "slug": "grow-business",
+      "name": "Grow a Business",
+      "tagline": "Build a repeatable marketing and sales engine",
+      "phases": 9,
+      "skills": [
+        "one-page-marketing",
+        "hundred-million-offers",
+        "predictable-revenue",
+        "contagious",
+        "influence-psychology",
+        "crossing-the-chasm",
+        "cold-start-problem",
+        "lean-analytics",
+        "negotiation"
+      ],
+      "fits": "business that needs a repeatable marketing and sales engine"
+    },
+    {
+      "slug": "grow-website",
+      "name": "Grow a Website",
+      "tagline": "Convert more existing traffic and capture leads",
+      "phases": 8,
+      "skills": [
+        "cro-methodology",
+        "scorecard-marketing",
+        "storybrand-messaging",
+        "made-to-stick",
+        "influence-psychology",
+        "hundred-million-offers",
+        "contagious",
+        "one-page-marketing"
+      ],
+      "fits": "site with traffic that should convert and capture more leads"
+    },
+    {
+      "slug": "grow-app",
+      "name": "Grow an App",
+      "tagline": "Improve activation, retention, and ongoing product learning",
+      "phases": 8,
+      "skills": [
+        "hooked-ux",
+        "improve-retention",
+        "continuous-discovery",
+        "lean-ux",
+        "inspired-product",
+        "lean-analytics",
+        "microinteractions",
+        "drive-motivation"
+      ],
+      "fits": "existing product that users try but don't stick with"
+    },
+    {
+      "slug": "improve-code-quality",
+      "name": "Improve Code Quality",
+      "tagline": "Harden a prototype into maintainable production code",
+      "phases": 9,
+      "skills": [
+        "working-with-legacy-code",
+        "clean-code",
+        "refactoring-patterns",
+        "software-design-philosophy",
+        "clean-architecture",
+        "pragmatic-programmer",
+        "release-it",
+        "system-design",
+        "ddia-systems"
+      ],
+      "fits": "prototype that needs production hardening"
+    },
+    {
+      "slug": "remove-technical-debt",
+      "name": "Remove Technical Debt",
+      "tagline": "Make legacy code safer to change while continuing to ship",
+      "phases": 8,
+      "skills": [
+        "working-with-legacy-code",
+        "refactoring-patterns",
+        "clean-code",
+        "software-design-philosophy",
+        "clean-architecture",
+        "pragmatic-programmer",
+        "release-it",
+        "domain-driven-design"
+      ],
+      "fits": "legacy code that needs safe incremental cleanup"
+    },
+    {
+      "slug": "design-code-architecture",
+      "name": "Design Code Architecture",
+      "tagline": "Choose boundaries, data, scale, and resilience for a new system",
+      "phases": 8,
+      "skills": [
+        "clean-architecture",
+        "domain-driven-design",
+        "system-design",
+        "ddia-systems",
+        "software-design-philosophy",
+        "release-it",
+        "pragmatic-programmer",
+        "37signals-way"
+      ],
+      "fits": "new system that needs its boundaries, data and scale chosen"
+    },
+    {
+      "slug": "conversion-optimization",
+      "name": "Conversion Optimization",
+      "tagline": "Diagnose one leaking conversion flow and test improvements",
+      "phases": 7,
+      "skills": [
+        "lean-analytics",
+        "cro-methodology",
+        "storybrand-messaging",
+        "hundred-million-offers",
+        "influence-psychology",
+        "design-everyday-things"
+      ],
+      "fits": "one funnel or flow that leaks conversions"
+    },
+    {
+      "slug": "architecture-optimization",
+      "name": "Architecture Optimization",
+      "tagline": "Improve a slow, tangled codebase with targeted performance and boundaries",
+      "phases": 8,
+      "skills": [
+        "working-with-legacy-code",
+        "clean-architecture",
+        "software-design-philosophy",
+        "refactoring-patterns",
+        "system-design",
+        "ddia-systems",
+        "release-it",
+        "pragmatic-programmer"
+      ],
+      "fits": "slow, tangled codebase that needs targeted fixes"
+    }
+  ],
+  "routes": [
+    {
+      "name": "Launch a subscription app",
+      "steps": [
+        [
+          "mom-test",
+          "check demand"
+        ],
+        [
+          "jobs-to-be-done",
+          "learn the real job"
+        ],
+        [
+          "lean-startup",
+          "test the riskiest assumption"
+        ],
+        [
+          "design-sprint",
+          "prototype core flow"
+        ],
+        [
+          "clean-architecture",
+          "if domain is complex"
+        ],
+        [
+          "domain-driven-design",
+          "if domain is complex"
+        ],
+        [
+          "release-it",
+          "prepare for failures"
+        ]
+      ],
+      "shortcut": "create-app",
+      "note": "Add iOS HIG only for an iPhone/iPad app."
+    },
+    {
+      "name": "Build a small local service website",
+      "steps": [
+        [
+          "one-page-marketing",
+          "audience and offer"
+        ],
+        [
+          "storybrand-messaging",
+          "clear homepage message"
+        ],
+        [
+          "refactoring-ui",
+          "consistent visual system"
+        ],
+        [
+          "ux-heuristics",
+          "remove confusion"
+        ],
+        [
+          "cro-methodology",
+          "improve enquiry flow"
+        ]
+      ],
+      "shortcut": "create-website",
+      "note": "Avoid loading every architecture skill for a simple brochure site."
+    },
+    {
+      "name": "Improve an online shop with abandoned checkout",
+      "steps": [
+        [
+          "cro-methodology",
+          "locate the drop-off"
+        ],
+        [
+          "ux-heuristics",
+          "remove checkout friction"
+        ],
+        [
+          "design-everyday-things",
+          "remove checkout friction"
+        ],
+        [
+          "obviously-awesome",
+          "clarify value"
+        ],
+        [
+          "storybrand-messaging",
+          "clarify value"
+        ],
+        [
+          "influence-psychology",
+          "add honest proof"
+        ],
+        [
+          "lean-analytics",
+          "measure the change"
+        ]
+      ],
+      "shortcut": "improve-website",
+      "note": "Use the focused Conversion Optimization journey for one funnel."
+    },
+    {
+      "name": "Stabilize a prototype before launch",
+      "steps": [
+        [
+          "working-with-legacy-code",
+          "add a safety net if untested"
+        ],
+        [
+          "clean-code",
+          "improve readability safely"
+        ],
+        [
+          "refactoring-patterns",
+          "improve readability safely"
+        ],
+        [
+          "clean-architecture",
+          "separate business rules"
+        ],
+        [
+          "release-it",
+          "timeouts, retries, health checks"
+        ],
+        [
+          "system-design",
+          "if actual load/data needs justify"
+        ],
+        [
+          "ddia-systems",
+          "if actual load/data needs justify"
+        ]
+      ],
+      "shortcut": "improve-code-quality",
+      "note": "Give the agent the actual expected traffic; don’t design for imaginary scale."
+    },
+    {
+      "name": "Safely change a mature legacy system",
+      "steps": [
+        [
+          "working-with-legacy-code",
+          "find seams and capture current behavior"
+        ],
+        [
+          "refactoring-patterns",
+          "make small named changes"
+        ],
+        [
+          "software-design-philosophy",
+          "reduce complexity"
+        ],
+        [
+          "domain-driven-design",
+          "clarify business boundaries where needed"
+        ],
+        [
+          "release-it",
+          "protect runtime behavior"
+        ]
+      ],
+      "shortcut": "remove-technical-debt",
+      "note": "Keep changes small and review them as you go."
+    },
+    {
+      "name": "Help a B2B product grow beyond early adopters",
+      "steps": [
+        [
+          "good-strategy-bad-strategy",
+          "name the real constraint"
+        ],
+        [
+          "obviously-awesome",
+          "sharpen positioning"
+        ],
+        [
+          "crossing-the-chasm",
+          "select a beachhead segment"
+        ],
+        [
+          "predictable-revenue",
+          "build pipeline"
+        ],
+        [
+          "lean-analytics",
+          "track progress"
+        ]
+      ],
+      "shortcut": "grow-business"
+    },
+    {
+      "name": "Improve a mobile app’s retention",
+      "steps": [
+        [
+          "jobs-to-be-done",
+          "why users need it"
+        ],
+        [
+          "improve-retention",
+          "make useful action easier"
+        ],
+        [
+          "continuous-discovery",
+          "keep learning"
+        ],
+        [
+          "lean-analytics",
+          "choose a meaningful measure"
+        ],
+        [
+          "ios-hig-design",
+          "refine native feel"
+        ],
+        [
+          "microinteractions",
+          "refine native feel"
+        ]
+      ],
+      "shortcut": "grow-app",
+      "note": "Optimize for lasting user value, not engagement for its own sake."
+    },
+    {
+      "name": "Organize a growing engineering team",
+      "steps": [
+        [
+          "good-strategy-bad-strategy",
+          "set focus"
+        ],
+        [
+          "team-topologies",
+          "reduce handoffs (multiple teams)"
+        ],
+        [
+          "high-output-management",
+          "improve manager leverage"
+        ],
+        [
+          "traction-eos",
+          "add an operating rhythm if company size fits"
+        ],
+        [
+          "drive-motivation",
+          "check motivation and autonomy"
+        ]
+      ],
+      "note": "Use the team-size-appropriate parts; the source cautions that EOS can be too much machinery for a very small team."
+    }
+  ]
+}
