@@ -501,6 +501,17 @@
       ]
     },
     {
+      "name": "Technical Documentation",
+      "guide_slug": "technical-documentation",
+      "slug": "technical-documentation",
+      "category": "Code Quality",
+      "summary": "Write and review clear developer documentation using Google’s documentation style guidance.",
+      "use_when": "Use for setup instructions, API docs, runbooks, and developer guides.",
+      "aliases": [
+        "technical documentation"
+      ]
+    },
+    {
       "name": "Clean Architecture",
       "guide_slug": "clean-architecture",
       "slug": "clean-architecture",

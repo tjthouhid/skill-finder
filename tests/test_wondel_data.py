@@ -12,7 +12,7 @@ class WondelData(unittest.TestCase):
         self.assertEqual(validate_source(DATA), [])
 
     def test_counts(self):
-        self.assertEqual(len(DATA["skills"]), 50)
+        self.assertEqual(len(DATA["skills"]), 51)
         self.assertEqual(len(DATA["journeys"]), 14)
         self.assertEqual(len(DATA["routes"]), 8)
         self.assertEqual(len(DATA["categories"]), 8)
