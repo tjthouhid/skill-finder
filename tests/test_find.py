@@ -71,6 +71,32 @@ class FindTests(unittest.TestCase):
         got = set(top_slugs("customers don't understand what we do"))
         self.assertTrue(got & {"obviously-awesome", "storybrand-messaging"}, got)
 
+    def test_launch_page_not_ai_generated(self):
+        got = set(top_slugs("launch page that doesn't look AI-generated"))
+        self.assertTrue(got & {"design-taste-frontend", "top-design"}, got)
+
+    def test_checkout_page_loses_customers(self):
+        self.assertIn("cro-methodology", top_slugs("my checkout page loses customers"))
+
+    def test_synonym_terms_weigh_half(self):
+        q = "launch"
+        rec = {"summary": "release"}
+        user = score_skill(expand(tokenize(q), q), [], {"summary": "launch"})
+        syn = score_skill(expand(tokenize(q), q), [], rec)
+        self.assertAlmostEqual(syn, user * 0.5)
+
+    def test_leave_abandon_symmetric(self):
+        for q in ("users leave", "users abandon"):
+            terms = expand(tokenize(q), q)
+            self.assertTrue({"leave", "abandon", "drop"} <= set(terms), (q, terms))
+
+    def test_generated_synonyms(self):
+        for q in ("AI-generated copy", "looks generated"):
+            self.assertIn("slop", expand(tokenize(q), q))
+
+    def test_landing_not_stemmed(self):
+        self.assertEqual(tokenize("landing pages"), ["landing", "page"])
+
     def test_journey_landing_page(self):
         res = search(INDEX, "build a landing page from scratch")
         self.assertEqual(res["journeys"][0][1]["slug"], "create-website")

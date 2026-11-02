@@ -28,8 +28,11 @@ SYNONYMS = {
     "web design": "ui frontend landing visual interface",
     "human": "taste handcrafted anti-slop distinctive intentional",
     "generic": "templated slop",
-    "checkout": "conversion funnel cart",
+    "generated": "slop templated generic",
+    "ai-generated": "slop templated generic",
+    "checkout": "conversion funnel cart cro",
     "abandon": "drop-off leave",
+    "leave": "drop-off abandon",
     "slow": "performance speed latency",
     "legacy": "untested old seams",
     "scared": "risky safe",
@@ -49,6 +52,8 @@ FIELD_WEIGHTS = (
     ("category", 2), ("summary", 2), ("description", 1),
 )
 JOURNEY_WEIGHTS = (("name", 4), ("tagline", 3), ("fits", 3))
+SYNONYM_WEIGHT = 0.5
+NO_STEM = {"landing"}
 MIN_SCORE = 1.0
 MAX_INDEX_AGE = timedelta(days=30)
 _USE_PREFIX = re.compile(r"^use\b(?:\s+(?:when|for|before|whenever|as|in)\b)?[:\s]*", re.I)
@@ -57,6 +62,8 @@ _SPLIT = re.compile(r"[\W_]+", re.UNICODE)
 
 
 def _stem(tok):
+    if tok in NO_STEM:
+        return tok
     for suf in ("ing", "ed", "es", "s"):
         if tok.endswith(suf) and len(tok) - len(suf) >= 4:
             return tok[: -len(suf)]
@@ -77,25 +84,27 @@ def tokenize(text):
 
 
 def expand(tokens, raw):
+    """Return {term: weight}: query tokens weigh 1, synonym-only terms SYNONYM_WEIGHT."""
     low = raw.lower()
-    terms = list(tokens)
+    terms = dict.fromkeys(tokens, 1.0)
     for key, syn in SYNONYMS.items():
         if re.search(r"(?<!\w)" + re.escape(key) + r"\w{0,3}(?!\w)", low):
-            terms.extend(tokenize(syn))
-    seen, out = set(), []
-    for t in terms:
-        if t not in seen:
-            seen.add(t)
-            out.append(t)
-    return out
+            if "-" in key:  # one concept ("ai-generated"): its parts are not separate topics
+                for t in tokenize(key):
+                    terms[t] = SYNONYM_WEIGHT
+            for t in tokenize(syn):
+                terms.setdefault(t, SYNONYM_WEIGHT)
+    return terms
 
 
 def score_text(terms, text, weight):
     toks = tokenize(text)
     if not toks or not terms:
         return 0.0
+    if not isinstance(terms, dict):
+        terms = dict.fromkeys(terms, 1.0)
     present = set(toks)
-    hits = sum(1 for t in set(terms) if t in present)
+    hits = sum(w for t, w in terms.items() if t in present)
     return weight * hits / (1 + math.log(1 + len(toks)))
 
 
