@@ -1,16 +1,21 @@
 import contextlib
+import copy
+import datetime
 import io
 import json
 import pathlib
+import shlex
 import sys
 import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "skill-finder" / "scripts"))
+SCRIPTS = ROOT / "skill-finder" / "scripts"
+sys.path.insert(0, str(SCRIPTS))
 from common import load_sources
 from build_index import build_index
-from find import _bigrams, expand, main, render_markdown, score_journey, score_skill, search, tokenize
+from find import (_bigrams, _clean_use_when, expand, main, render_markdown, score_journey,
+                  score_skill, search, tokenize)
 
 FIX = ROOT / "tests" / "fixtures"
 REAL_SOURCES = ROOT / "skill-finder" / "data" / "sources"
@@ -140,6 +145,98 @@ class FindTests(unittest.TestCase):
         data = json.loads(out.getvalue())
         self.assertIn(data["skills"][0]["slug"], INDEX["skills"])
         self.assertEqual(data["tool"], "claude")
+
+
+def _run(index_obj, *extra):
+    """Write index_obj to a temp file, run main(), return (rc, stdout, stderr)."""
+    with tempfile.TemporaryDirectory() as d:
+        p = pathlib.Path(d) / "skills.json"
+        p.write_text(json.dumps(index_obj), encoding="utf-8")
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            rc = main(["checkout", "--index", str(p)] + list(extra))
+    return rc, out.getvalue(), err.getvalue()
+
+
+def _local_index(days_old=0):
+    idx = copy.deepcopy(INDEX)
+    idx["roots"] = {"claude": [str(pathlib.Path.home() / ".claude" / "skills")], "codex": []}
+    when = datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(days=days_old)
+    idx["generated_at"] = when.strftime("%Y-%m-%dT%H:%M:%SZ")
+    return idx
+
+
+class IndexFreshnessTests(unittest.TestCase):
+    def test_foreign_home_exit_2_with_hint(self):
+        idx = _local_index()
+        idx["roots"]["claude"] = ["/nowhere/else/.claude/skills"]
+        rc, out, err = _run(idx)
+        self.assertEqual(rc, 2)
+        self.assertEqual(out, "")
+        self.assertIn("another machine or is stale", err)
+        self.assertIn("build_index.py", err)
+
+    def test_stale_index_exit_2(self):
+        rc, _, err = _run(_local_index(days_old=31))
+        self.assertEqual(rc, 2)
+        self.assertIn("build_index.py", err)
+
+    def test_fresh_local_index_ok(self):
+        rc, out, err = _run(_local_index(days_old=1))
+        self.assertEqual(rc, 0, err)
+        self.assertIn("## Skills", out)
+
+    def test_bad_generated_at_is_stale(self):
+        idx = _local_index()
+        idx["generated_at"] = "yesterday"
+        self.assertEqual(_run(idx)[0], 2)
+
+    def test_non_dict_index_exit_2(self):
+        rc, _, err = _run([1, 2, 3])
+        self.assertEqual(rc, 2)
+        self.assertIn("build_index.py", err)
+
+    def test_missing_skills_dict_exit_2(self):
+        idx = _local_index()
+        idx["skills"] = []
+        self.assertEqual(_run(idx)[0], 2)
+
+    def test_hint_path_is_shell_quoted(self):
+        # the repo path contains a space; the printed command must quote it
+        _, _, err = _run([])
+        cmd = err.split("Run:")[1].strip()
+        self.assertTrue(cmd.startswith("python3 -I "))
+        self.assertEqual(shlex.split(cmd)[2], str(SCRIPTS / "build_index.py"))
+
+
+class UseWhenTests(unittest.TestCase):
+    def test_clean_use_when(self):
+        self.assertEqual(_clean_use_when("Use when the UI works"), "the UI works")
+        self.assertEqual(_clean_use_when("Use for launch pages or brand moments"),
+                         "launch pages or brand moments")
+        self.assertEqual(_clean_use_when("use before shipping: check"), "shipping: check")
+        self.assertEqual(_clean_use_when("Use whenever X"), "X")
+        self.assertEqual(_clean_use_when("Use as a gate"), "a gate")
+        self.assertEqual(_clean_use_when("Use in a hurry"), "a hurry")
+        self.assertEqual(_clean_use_when("Launch pages"), "Launch pages")
+        self.assertEqual(_clean_use_when(None), "")
+
+    def test_render_no_doubled_label(self):
+        out = render_markdown(search(INDEX, "distinctive memorable launch page art direction"),
+                              "claude", INDEX)
+        self.assertNotIn("Use when: Use", out)
+        self.assertIn("Use when: launch pages or brand moments", out)
+
+    def test_journey_install_line_for_missing_tool(self):
+        out = render_markdown(search(INDEX, "build a landing page from scratch"), "codex", INDEX)
+        want = "   Install (codex): npx skills add wondelai/skills -s create-website -g -a codex"
+        self.assertIn(want, out)
+        lines = out.splitlines()
+        j0 = lines.index("## Journeys")
+        i = next(n for n, l in enumerate(lines) if n > j0 and l.startswith("1. create-website"))
+        self.assertEqual(lines[i + 1], want)
+        out_claude = render_markdown(search(INDEX, "build a landing page from scratch"), "claude", INDEX)
+        self.assertNotIn("-s create-website", out_claude)
 
 
 if __name__ == "__main__":

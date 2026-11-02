@@ -90,6 +90,15 @@ class BuildIndexTests(unittest.TestCase):
         journey = next(j for j in self.index["journeys"] if j["slug"] == "create-website")
         self.assertIs(journey["installed"]["claude"], True)
 
+    def test_journey_records_carry_install(self):
+        journey = next(j for j in self.index["journeys"] if j["slug"] == "create-website")
+        self.assertEqual(journey["install"]["codex"],
+                         "npx skills add wondelai/skills -s create-website -g -a codex")
+        self.assertEqual(journey["install"]["claude"],
+                         "npx skills add wondelai/skills -s create-website -g -a claude-code")
+        for j in self.index["journeys"]:
+            self.assertEqual(set(j["install"]), {"claude", "codex"})
+
     def test_categories_and_stats(self):
         self.assertIn("Design & UX", self.index["categories"])
         self.assertEqual(self.index["categories"], sorted(self.index["categories"]))

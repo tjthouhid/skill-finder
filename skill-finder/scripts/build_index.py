@@ -161,7 +161,7 @@ def build_index(roots, sources):
             if journey["slug"] in seen_journeys:
                 continue
             seen_journeys.add(journey["slug"])
-            journeys.append((src["source"], journey))
+            journeys.append((src, journey))
             for member in journey["skills"]:
                 journey_members.setdefault(member, []).append(journey["slug"])
 
@@ -214,9 +214,11 @@ def build_index(roots, sources):
         not_installed.append(slug)
 
     journey_out = []
-    for source, journey in journeys:
+    for src, journey in journeys:
         item = dict(journey)
-        item["source"] = source
+        item["source"] = src["source"]
+        item["install"] = {a: expand_install(src.get("install"), journey["slug"], INSTALL_AGENT[a])
+                           for a in AGENTS}
         rec = skills.get(journey["slug"])
         item["installed"] = dict(rec["installed"]) if rec else {a: False for a in AGENTS}
         journey_out.append(item)

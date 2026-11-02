@@ -16,13 +16,13 @@ Recommends skills from a local index (`data/skills.json`). Two modes: **Find** (
 `SKILL_DIR` is the directory containing this SKILL.md. Scripts live in `$SKILL_DIR/scripts`, data in `$SKILL_DIR/data`.
 Always run them as `python3 -I "$SKILL_DIR/scripts/<name>.py"` (stdlib only, no installs needed).
 
-- `find.py "<need>" [--tool claude|codex] [--top N] [--json]` — default tool `claude`. Exit 1 = usage error, exit 2 = `skills.json` missing (the message names `build_index.py`).
+- `find.py "<need>" [--tool claude|codex] [--top N] [--json]` — default tool `claude`. Exit 1 = usage error, exit 2 = `skills.json` missing, unreadable, built for another machine, or older than 30 days (the message names `build_index.py`).
 - `build_index.py [--data DIR] [--claude-root P ...] [--codex-root P ...] [--quiet]` — rebuilds `data/skills.json`, prints counts.
 
 ## Find mode
 
 1. Pick the tool: `codex` if you are running under Codex CLI, else `claude`.
-2. Run `find.py "<the user's need, in their words>" --tool <tool>`. Append the project's language/stack if the user gave it. If `data/skills.json` is missing, or its top-level `generated_at` is older than 30 days, run `build_index.py` first.
+2. Run `python3 -I "$SKILL_DIR/scripts/find.py" "<the user's need, in their words>" --tool <tool>`. Append the project's language/stack if the user gave it. If it exits 2, run `python3 -I "$SKILL_DIR/scripts/build_index.py"` and re-run `find.py` once.
 3. Read the top results. Pick 2–4 skills that actually fit; drop near-duplicates (prefer the installed one; prefer the Wondel one when a gstack/other skill overlaps and the ask is advice-shaped). If the ask is a whole project ("build me a…", "my site is failing"), lead with the matching journey and list its skills under it.
 4. Reply in this format (short, no preamble):
    - **Best fit** — slug, one line why, installed/not.

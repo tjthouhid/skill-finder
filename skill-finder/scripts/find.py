@@ -2,13 +2,16 @@
 """Rank installed/curated skills against a plain-language need.
 
 Usage: python3 -I find.py "query text" [--tool claude|codex] [--top N] [--json]
-Exit codes: 0 ok, 1 usage, 2 skills.json missing/unreadable.
+Exit codes: 0 ok, 1 usage, 2 skills.json missing/unreadable/malformed, built for
+another machine, or older than 30 days (run build_index.py, then retry).
 """
 import argparse
 import json
 import math
 import re
+import shlex
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 STOPWORDS = {
@@ -47,6 +50,8 @@ FIELD_WEIGHTS = (
 )
 JOURNEY_WEIGHTS = (("name", 4), ("tagline", 3), ("fits", 3))
 MIN_SCORE = 1.0
+MAX_INDEX_AGE = timedelta(days=30)
+_USE_PREFIX = re.compile(r"^use\b(?:\s+(?:when|for|before|whenever|as|in)\b)?[:\s]*", re.I)
 
 _SPLIT = re.compile(r"[\W_]+", re.UNICODE)
 
@@ -160,6 +165,11 @@ def _mark(flag):
     return "✓" if flag else "✗"
 
 
+def _clean_use_when(text):
+    """Drop a leading 'Use [when|for|before|...]' so the caller can add its own label."""
+    return _USE_PREFIX.sub("", (text or "").strip(), count=1)
+
+
 def render_markdown(results, tool, index):
     skills, journeys = results["skills"], results["journeys"]
     if not skills and not journeys:
@@ -176,7 +186,7 @@ def render_markdown(results, tool, index):
             )
             if rec.get("summary"):
                 lines.append("   " + rec["summary"])
-            uw = re.sub(r"^use when[:\s]*", "", rec.get("use_when") or "", flags=re.I)
+            uw = _clean_use_when(rec.get("use_when"))
             if uw:
                 lines.append("   Use when: " + uw)
             cmd = (rec.get("install") or {}).get(tool)
@@ -190,6 +200,9 @@ def render_markdown(results, tool, index):
                 "%d. %s — %s (%s phases) [installed %s]"
                 % (n, j["slug"], j.get("tagline", ""), j.get("phases", "?"), _mark(ok))
             )
+            cmd = (j.get("install") or {}).get(tool)
+            if not ok and cmd:
+                lines.append("   Install (%s): %s" % (tool, cmd))
     if results["routes"]:
         lines.append("## Routes that mention these")
         for r in results["routes"]:
@@ -200,7 +213,28 @@ def render_markdown(results, tool, index):
 
 def load_index(path):
     with open(path, encoding="utf-8") as fh:
-        return json.load(fh)
+        index = json.load(fh)
+    if not isinstance(index, dict) or not isinstance(index.get("skills"), dict):
+        raise ValueError("not a skills index")
+    return index
+
+
+def index_problem(index, now=None):
+    """Return a reason string when the index is foreign to this machine or stale, else None."""
+    home = str(Path.home())
+    roots = index.get("roots")
+    claude = roots.get("claude") if isinstance(roots, dict) else None
+    if not isinstance(claude, list) or not any(
+            isinstance(r, str) and r.startswith(home) for r in claude):
+        return "built for another machine"
+    try:
+        built = datetime.strptime(index["generated_at"], "%Y-%m-%dT%H:%M:%SZ")
+        built = built.replace(tzinfo=timezone.utc)
+    except (KeyError, TypeError, ValueError):
+        return "has no valid generated_at"
+    if (now or datetime.now(timezone.utc)) - built > MAX_INDEX_AGE:
+        return "is more than 30 days old"
+    return None
 
 
 def _results_json(query, tool, results):
@@ -241,18 +275,17 @@ def main(argv=None):
         return 1
     scripts = Path(__file__).resolve().parent
     path = args.index or scripts.parent / "data" / "skills.json"
+    build = "python3 -I " + shlex.quote(str(scripts / "build_index.py"))
     try:
         index = load_index(path)
     except FileNotFoundError:
-        sys.stderr.write(
-            "skills.json not found at %s. Run: python3 -I %s\n"
-            % (path, scripts / "build_index.py")
-        )
+        sys.stderr.write("skills.json not found at %s. Run: %s\n" % (path, build))
         return 2
     except (OSError, ValueError) as e:
-        sys.stderr.write(
-            "cannot read %s (%s). Run: python3 -I %s\n" % (path, e, scripts / "build_index.py")
-        )
+        sys.stderr.write("cannot read %s (%s). Run: %s\n" % (path, e, build))
+        return 2
+    if index_problem(index):
+        sys.stderr.write("skills.json was built for another machine or is stale. Run: %s\n" % build)
         return 2
     results = search(index, query, args.top)
     if args.as_json:
