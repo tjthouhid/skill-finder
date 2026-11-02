@@ -9,7 +9,7 @@
     "Strategy & Growth",
     "Team & Operations"
   ],
-  "generated_at": "2026-11-02T14:54:15Z",
+  "generated_at": "2026-11-02T15:06:26Z",
   "journeys": [
     {
       "fits": "new business idea to test and position before investing",
@@ -5043,6 +5043,33 @@
       "source": "unknown",
       "sources_seen": [],
       "summary": "Gets AWS credentials for CLI/SDK access via `aws login`.",
+      "use_when": null
+    },
+    "skill-finder": {
+      "aliases": [],
+      "author": "tjthouhid",
+      "category": null,
+      "description": "Recommend which installed agent skill to use for a task. Indexes every installed SKILL.md (Claude Code and Codex CLI) plus curated knowledge about skill libraries, then returns the best-fit skills, related journeys, and install commands for anything missing. Use when the user says \"which skill should I use\", \"what skill for\", \"is there a skill for\", \"find me a skill\", \"recommend a skill\", or \"/skill-finder\". Add mode: when the user says \"add these skills to skill finder\" or \"index a new skills guide\", extract skills from a URL, file, or pasted list into a curated source and rebuild the index. Also use for \"refresh the skill index\".",
+      "display_name": "Skill Finder",
+      "guide_slug": null,
+      "install": {
+        "claude": null,
+        "codex": null
+      },
+      "installed": {
+        "claude": true,
+        "codex": true
+      },
+      "journeys": [],
+      "name": "skill-finder",
+      "paths": {
+        "claude": "/Users/tjthouhid/.claude/skills/skill-finder/SKILL.md",
+        "codex": "/Users/tjthouhid/.codex/skills/skill-finder/SKILL.md"
+      },
+      "slug": "skill-finder",
+      "source": "tjthouhid",
+      "sources_seen": [],
+      "summary": "Recommend which installed agent skill to use for a task.",
       "use_when": null
     },
     "skillify": {
