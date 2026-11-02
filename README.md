@@ -27,7 +27,7 @@ The index covers the following folders:
 | Agent | Folders scanned |
 |---|---|
 | Claude Code | `~/.claude/skills` and every plugin's `skills` folder under `~/.claude/plugins/cache` |
-| Codex CLI | `~/.codex/skills` |
+| Codex CLI | `~/.codex/skills` and `~/.agents/skills` |
 
 Curated sources live in `data/sources/*.json`. They add what a `SKILL.md`
 alone doesn't say: a category, a "use when" line, install commands, and
@@ -53,9 +53,6 @@ Choose one of the following methods.
 
 ### Install from GitHub
 
-<!-- TODO(verify): the repository isn't published yet; confirm the
-     owner/name once it is. -->
-
 To install for Claude Code, Codex CLI, or both, run the matching command:
 
 ```sh
@@ -64,7 +61,8 @@ npx skills add tjthouhid/skill-finder -g -a codex
 ```
 
 The `-g` flag installs the skill for your user account instead of a single
-project.
+project. The Claude Code command installs to `~/.claude/skills/skill-finder`,
+and the Codex CLI command installs to `~/.agents/skills/skill-finder`.
 
 ### Install from a local copy
 
@@ -92,7 +90,8 @@ SKILL_DIR=~/.claude/skills/skill-finder
 python3 -I "$SKILL_DIR/scripts/build_index.py"
 ```
 
-For Codex CLI, set `SKILL_DIR` to `~/.codex/skills/skill-finder`.
+For Codex CLI, set `SKILL_DIR` to `~/.agents/skills/skill-finder`, or to
+`~/.codex/skills/skill-finder` if you linked the skill there by hand.
 
 The script prints the path it wrote, the total number of skills, and a
 count per source:
@@ -254,7 +253,7 @@ The following options control `build_index.py`:
 |---|---|---|
 | `--data` | The data folder. The script reads `DIR/sources/*.json` and writes `DIR/skills.json`. | `data` next to the scripts |
 | `--claude-root` | A Claude Code skills folder to scan. Repeat it for more folders. Any value replaces all default Claude Code folders. | The Claude Code folders listed in [How Skill Finder works](#how-skill-finder-works) |
-| `--codex-root` | A Codex CLI skills folder to scan. Repeat it for more folders. Any value replaces the default. | `~/.codex/skills` |
+| `--codex-root` | A Codex CLI skills folder to scan. Repeat it for more folders. Any value replaces the defaults. | `~/.codex/skills` and `~/.agents/skills` |
 | `--quiet` | Skips the summary. Warnings about invalid source files still print. | Off |
 
 ### Index record fields
@@ -329,7 +328,4 @@ python3 -I -m unittest discover -s tests -t . -v
 
 ## License
 
-MIT, as declared in `skill-finder/SKILL.md`.
-
-<!-- TODO(verify): the repository has no LICENSE file. Add one before
-     publishing. -->
+MIT. See [LICENSE](LICENSE).
