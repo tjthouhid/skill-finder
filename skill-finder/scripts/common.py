@@ -1,6 +1,7 @@
 """Shared helpers for Skill Finder (standard library only, no import side effects)."""
 import json
 import re
+from pathlib import Path
 
 _KEY_RE = re.compile(r"^([^\s:#][^:]*?)\s*:(?:\s+(.*))?$")
 _BLOCK_RE = re.compile(r"^[>|][+-]?\d*$")
@@ -326,3 +327,11 @@ def expand_install(template, slug, agent):
     if template is None:
         return None
     return template.replace("{slug}", slug).replace("{agent}", agent)
+
+
+def default_roots():
+    """Default skill roots per agent (existing or not): Claude user + plugin caches, Codex user."""
+    home = Path.home()
+    claude = [home / ".claude" / "skills"]
+    claude += sorted((home / ".claude" / "plugins" / "cache").glob("*/*/*/skills"))
+    return {"claude": claude, "codex": [home / ".codex" / "skills"]}
