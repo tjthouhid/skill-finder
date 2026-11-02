@@ -173,6 +173,10 @@ def build_index(roots, sources):
         description = description if isinstance(description, str) else ""
         curated_name = _first(entries, "name")
         aliases = _distinct(a for _, sk in entries for a in sk.get("aliases", []))
+        install = _install(entries, plugin_ref)
+        # Claude Code names plugin skills <plugin>:<skill>; codex has none unless installed/installable
+        invoke = {"claude": f"{plugin_ref.split('@', 1)[0]}:{slug}" if plugin_ref else slug,
+                  "codex": slug if "codex" in paths or install["codex"] else None}
         return {
             "slug": slug,
             "name": (meta or {}).get("name") or slug,
@@ -185,7 +189,8 @@ def build_index(roots, sources):
             "source": source,
             "sources_seen": seen,
             "author": author,
-            "install": _install(entries, plugin_ref),
+            "install": install,
+            "invoke": invoke,
             "installed": {a: a in paths for a in AGENTS},
             "paths": {a: [str(p) for p in ps] for a, ps in paths.items()},
             "journeys": journey_members.get(slug, []),

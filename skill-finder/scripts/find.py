@@ -193,6 +193,9 @@ def render_markdown(results, tool, index):
                 "%d. %s  [installed: claude %s codex %s]  score %.2f  (%s)"
                 % (n, rec["slug"], _mark(inst.get("claude")), _mark(inst.get("codex")), score, tail)
             )
+            invoke = (rec.get("invoke") or {}).get(tool)
+            if invoke and invoke != rec["slug"]:
+                lines.append("   Invoke (%s): %s" % (tool, invoke))
             if rec.get("summary"):
                 lines.append("   " + rec["summary"])
             uw = _clean_use_when(rec.get("use_when"))

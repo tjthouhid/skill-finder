@@ -81,6 +81,14 @@ class BuildIndexTests(unittest.TestCase):
         self.assertEqual(rec["install"]["claude"], "/plugin install superpowers@mkt")
         self.assertIsNone(rec["install"]["codex"])
 
+    def test_plugin_skill_invoke_is_namespaced(self):
+        self.assertEqual(self.skills["brainstorming"]["invoke"],
+                         {"claude": "superpowers:brainstorming", "codex": None})
+        self.assertEqual(self.skills["refactoring-ui"]["invoke"],
+                         {"claude": "refactoring-ui", "codex": "refactoring-ui"})
+        self.assertEqual(self.skills["top-design"]["invoke"],
+                         {"claude": "top-design", "codex": "top-design"})
+
     def test_gstack_source(self):
         rec = self.skills["ship"]
         self.assertEqual(rec["source"], "gstack")

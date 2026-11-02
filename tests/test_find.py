@@ -118,6 +118,17 @@ class FindTests(unittest.TestCase):
         self.assertIn("claude ✓", out)
         self.assertNotIn("Install (claude)", out)
 
+    def test_render_invoke_name_only_when_namespaced(self):
+        res = search(INDEX, "brainstorming")
+        one = {"skills": res["skills"][:1], "journeys": [], "routes": []}
+        self.assertEqual(res["skills"][0][1]["slug"], "brainstorming")
+        lines = render_markdown(one, "claude", INDEX).splitlines()
+        self.assertTrue(lines[1].startswith("1. brainstorming "), lines)
+        self.assertEqual(lines[2], "   Invoke (claude): superpowers:brainstorming")
+        self.assertNotIn("Invoke", render_markdown(one, "codex", INDEX))
+        out = render_markdown(search(INDEX, "refactoring ui looks uneven cluttered"), "claude", INDEX)
+        self.assertNotIn("Invoke (claude): refactoring-ui", out)
+
     def test_bigram_bonus_on_token_boundaries(self):
         rec = {"summary": "refactor old code safely"}
         terms = ["zzzz"]

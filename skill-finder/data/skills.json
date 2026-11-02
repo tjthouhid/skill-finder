@@ -9,7 +9,7 @@
     "Strategy & Growth",
     "Team & Operations"
   ],
-  "generated_at": "2026-11-02T15:30:01Z",
+  "generated_at": "2026-11-02T15:30:46Z",
   "journeys": [
     {
       "fits": "new business idea to test and position before investing",
@@ -665,6 +665,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "37signals-way",
+        "codex": "37signals-way"
+      },
       "journeys": [
         "create-app",
         "design-code-architecture"
@@ -698,6 +702,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "_gstack-command",
+        "codex": null
+      },
       "journeys": [],
       "name": "_gstack-command",
       "paths": {
@@ -725,6 +733,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:agent-advisor",
+        "codex": null
       },
       "journeys": [],
       "name": "agent-advisor",
@@ -754,6 +766,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "amazon-bedrock",
+        "codex": null
+      },
       "journeys": [],
       "name": "amazon-bedrock",
       "paths": {
@@ -782,6 +798,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-startup-advisor:architect-for-startups",
+        "codex": null
+      },
       "journeys": [],
       "name": "architect-for-startups",
       "paths": {
@@ -809,6 +829,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "architecture-optimization",
+        "codex": "architecture-optimization"
       },
       "journeys": [],
       "name": "architecture-optimization",
@@ -840,6 +864,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "autoplan",
+        "codex": null
+      },
       "journeys": [],
       "name": "autoplan",
       "paths": {
@@ -867,6 +895,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-ai-ml",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-ai-ml",
@@ -896,6 +928,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-auth",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-auth",
       "paths": {
@@ -923,6 +959,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-billing-and-cost-management",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-billing-and-cost-management",
@@ -952,6 +992,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-blocks",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-blocks",
       "paths": {
@@ -979,6 +1023,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-cdk",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-cdk",
@@ -1008,6 +1056,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-cloudformation",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-cloudformation",
       "paths": {
@@ -1035,6 +1087,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-compute",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-compute",
@@ -1064,6 +1120,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-containers",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-containers",
       "paths": {
@@ -1091,6 +1151,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-database",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-database",
@@ -1120,6 +1184,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-deployment",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-deployment",
       "paths": {
@@ -1147,6 +1215,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-iam",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-iam",
@@ -1176,6 +1248,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-messaging-and-streaming",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-messaging-and-streaming",
       "paths": {
@@ -1203,6 +1279,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-networking",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-networking",
@@ -1232,6 +1312,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-observability",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-observability",
       "paths": {
@@ -1259,6 +1343,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-sdk-js-v3-usage",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-sdk-js-v3-usage",
@@ -1288,6 +1376,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-sdk-python-usage",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-sdk-python-usage",
       "paths": {
@@ -1315,6 +1407,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-sdk-swift-usage",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-sdk-swift-usage",
@@ -1344,6 +1440,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-security",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-security",
       "paths": {
@@ -1371,6 +1471,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-serverless",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-serverless",
@@ -1400,6 +1504,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-storage",
+        "codex": null
+      },
       "journeys": [],
       "name": "aws-storage",
       "paths": {
@@ -1427,6 +1535,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-well-architected-review",
+        "codex": null
       },
       "journeys": [],
       "name": "aws-well-architected-review",
@@ -1456,6 +1568,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-startup-advisor:azure-to-aws",
+        "codex": null
+      },
       "journeys": [],
       "name": "azure-to-aws",
       "paths": {
@@ -1483,6 +1599,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "banner-design",
+        "codex": null
       },
       "journeys": [],
       "name": "banner-design",
@@ -1512,6 +1632,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "benchmark",
+        "codex": null
+      },
       "journeys": [],
       "name": "benchmark",
       "paths": {
@@ -1539,6 +1663,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "benchmark-models",
+        "codex": null
       },
       "journeys": [],
       "name": "benchmark-models",
@@ -1569,6 +1697,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "blue-ocean-strategy",
+        "codex": "blue-ocean-strategy"
       },
       "journeys": [
         "create-business"
@@ -1602,6 +1734,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:brainstorming",
+        "codex": null
+      },
       "journeys": [],
       "name": "brainstorming",
       "paths": {
@@ -1629,6 +1765,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "brand",
+        "codex": null
       },
       "journeys": [],
       "name": "brand",
@@ -1658,6 +1798,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "browse",
+        "codex": null
+      },
       "journeys": [],
       "name": "browse",
       "paths": {
@@ -1685,6 +1829,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "canary",
+        "codex": null
       },
       "journeys": [],
       "name": "canary",
@@ -1714,6 +1862,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "careful",
+        "codex": null
+      },
       "journeys": [],
       "name": "careful",
       "paths": {
@@ -1742,6 +1894,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "caveman",
+        "codex": null
+      },
       "journeys": [],
       "name": "caveman",
       "paths": {
@@ -1769,6 +1925,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "claude-security:claude-security",
+        "codex": null
       },
       "journeys": [],
       "name": "claude-security",
@@ -1799,6 +1959,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "clean-architecture",
+        "codex": "clean-architecture"
       },
       "journeys": [
         "create-app",
@@ -1838,6 +2002,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "clean-code",
+        "codex": "clean-code"
+      },
       "journeys": [
         "create-app",
         "improve-code-quality",
@@ -1872,6 +2040,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "codex",
+        "codex": null
+      },
       "journeys": [],
       "name": "codex",
       "paths": {
@@ -1901,6 +2073,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "cold-start-problem",
+        "codex": "cold-start-problem"
       },
       "journeys": [
         "grow-business"
@@ -1934,6 +2110,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "connect-chrome",
+        "codex": null
+      },
       "journeys": [],
       "name": "connect-chrome",
       "paths": {
@@ -1961,6 +2141,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "contagious",
+        "codex": "contagious"
       },
       "journeys": [
         "grow-business",
@@ -1995,6 +2179,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "context-restore",
+        "codex": null
+      },
       "journeys": [],
       "name": "context-restore",
       "paths": {
@@ -2023,6 +2211,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "context-save",
+        "codex": null
+      },
       "journeys": [],
       "name": "context-save",
       "paths": {
@@ -2050,6 +2242,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:contextual-offers-for-startups",
+        "codex": null
       },
       "journeys": [],
       "name": "contextual-offers-for-startups",
@@ -2080,6 +2276,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "continuous-discovery",
+        "codex": "continuous-discovery"
       },
       "journeys": [
         "grow-app"
@@ -2113,6 +2313,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "conversion-optimization",
+        "codex": "conversion-optimization"
+      },
       "journeys": [],
       "name": "conversion-optimization",
       "paths": {
@@ -2142,6 +2346,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "create-app",
+        "codex": "create-app"
       },
       "journeys": [],
       "name": "create-app",
@@ -2173,6 +2381,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "create-business",
+        "codex": "create-business"
+      },
       "journeys": [],
       "name": "create-business",
       "paths": {
@@ -2202,6 +2414,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "create-website",
+        "codex": "create-website"
       },
       "journeys": [],
       "name": "create-website",
@@ -2234,6 +2450,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "cro-methodology",
+        "codex": "cro-methodology"
       },
       "journeys": [
         "create-website",
@@ -2272,6 +2492,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "crossing-the-chasm",
+        "codex": "crossing-the-chasm"
+      },
       "journeys": [
         "create-business",
         "grow-business"
@@ -2305,6 +2529,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "cso",
+        "codex": null
+      },
       "journeys": [],
       "name": "cso",
       "paths": {
@@ -2334,6 +2562,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ddia-systems",
+        "codex": "ddia-systems"
       },
       "journeys": [
         "improve-code-quality",
@@ -2369,6 +2601,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "design",
+        "codex": null
+      },
       "journeys": [],
       "name": "design",
       "paths": {
@@ -2396,6 +2632,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-code-architecture",
+        "codex": "design-code-architecture"
       },
       "journeys": [],
       "name": "design-code-architecture",
@@ -2427,6 +2667,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "design-consultation",
+        "codex": null
+      },
       "journeys": [],
       "name": "design-consultation",
       "paths": {
@@ -2457,6 +2701,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-everyday-things",
+        "codex": "design-everyday-things"
       },
       "journeys": [
         "improve-website",
@@ -2492,6 +2740,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "design-html",
+        "codex": null
+      },
       "journeys": [],
       "name": "design-html",
       "paths": {
@@ -2519,6 +2771,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-motion-principles",
+        "codex": null
       },
       "journeys": [],
       "name": "design-motion-principles",
@@ -2548,6 +2804,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "design-review",
+        "codex": null
+      },
       "journeys": [],
       "name": "design-review",
       "paths": {
@@ -2575,6 +2835,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-shotgun",
+        "codex": null
       },
       "journeys": [],
       "name": "design-shotgun",
@@ -2605,6 +2869,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-sprint",
+        "codex": "design-sprint"
       },
       "journeys": [
         "create-business",
@@ -2639,6 +2907,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "design-system",
+        "codex": null
+      },
       "journeys": [],
       "name": "design-system",
       "paths": {
@@ -2666,6 +2938,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "design-taste-frontend",
+        "codex": null
       },
       "journeys": [],
       "name": "design-taste-frontend",
@@ -2695,6 +2971,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "deslop-shared-libs",
+        "codex": null
+      },
       "journeys": [],
       "name": "deslop-shared-libs",
       "paths": {
@@ -2722,6 +3002,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "devex-review",
+        "codex": null
       },
       "journeys": [],
       "name": "devex-review",
@@ -2751,6 +3035,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:diagnosing-superpowers",
+        "codex": null
+      },
       "journeys": [],
       "name": "diagnosing-superpowers",
       "paths": {
@@ -2778,6 +3066,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "diagram",
+        "codex": null
       },
       "journeys": [],
       "name": "diagram",
@@ -2807,6 +3099,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:dispatching-parallel-agents",
+        "codex": null
+      },
       "journeys": [],
       "name": "dispatching-parallel-agents",
       "paths": {
@@ -2835,6 +3131,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "document-generate",
+        "codex": null
+      },
       "journeys": [],
       "name": "document-generate",
       "paths": {
@@ -2862,6 +3162,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "document-release",
+        "codex": null
       },
       "journeys": [],
       "name": "document-release",
@@ -2892,6 +3196,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "domain-driven-design",
+        "codex": "domain-driven-design"
       },
       "journeys": [
         "create-app",
@@ -2929,6 +3237,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "drive-motivation",
+        "codex": "drive-motivation"
+      },
       "journeys": [
         "improve-business",
         "grow-app"
@@ -2962,6 +3274,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "eval-plan",
+        "codex": null
+      },
       "journeys": [],
       "name": "eval-plan",
       "paths": {
@@ -2989,6 +3305,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "superpowers:executing-plans",
+        "codex": null
       },
       "journeys": [],
       "name": "executing-plans",
@@ -3018,6 +3338,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:finishing-a-development-branch",
+        "codex": null
+      },
       "journeys": [],
       "name": "finishing-a-development-branch",
       "paths": {
@@ -3046,6 +3370,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "freeze",
+        "codex": null
+      },
       "journeys": [],
       "name": "freeze",
       "paths": {
@@ -3073,6 +3401,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "frontend-design",
+        "codex": null
       },
       "journeys": [],
       "name": "frontend-design",
@@ -3103,6 +3435,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-startup-advisor:gcp-to-aws",
+        "codex": null
+      },
       "journeys": [],
       "name": "gcp-to-aws",
       "paths": {
@@ -3132,6 +3468,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "good-strategy-bad-strategy",
+        "codex": "good-strategy-bad-strategy"
       },
       "journeys": [
         "create-business",
@@ -3166,6 +3506,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "graphify",
+        "codex": null
+      },
       "journeys": [],
       "name": "graphify",
       "paths": {
@@ -3193,6 +3537,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "grow-app",
+        "codex": "grow-app"
       },
       "journeys": [],
       "name": "grow-app",
@@ -3224,6 +3572,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "grow-business",
+        "codex": "grow-business"
+      },
       "journeys": [],
       "name": "grow-business",
       "paths": {
@@ -3253,6 +3605,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "grow-website",
+        "codex": "grow-website"
       },
       "journeys": [],
       "name": "grow-website",
@@ -3284,6 +3640,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "gstack",
+        "codex": null
+      },
       "journeys": [],
       "name": "gstack",
       "paths": {
@@ -3311,6 +3671,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "gstack-upgrade",
+        "codex": null
       },
       "journeys": [],
       "name": "gstack-upgrade",
@@ -3340,6 +3704,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "guard",
+        "codex": null
+      },
       "journeys": [],
       "name": "guard",
       "paths": {
@@ -3368,6 +3736,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "health",
+        "codex": null
+      },
       "journeys": [],
       "name": "health",
       "paths": {
@@ -3395,6 +3767,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:heroku-to-aws",
+        "codex": null
       },
       "journeys": [],
       "name": "heroku-to-aws",
@@ -3425,6 +3801,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "high-output-management",
+        "codex": "high-output-management"
       },
       "journeys": [
         "improve-business"
@@ -3459,6 +3839,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "high-perf-browser",
+        "codex": "high-perf-browser"
       },
       "journeys": [
         "improve-website",
@@ -3495,6 +3879,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "hooked-ux",
+        "codex": "hooked-ux"
+      },
       "journeys": [
         "grow-app"
       ],
@@ -3529,6 +3917,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "hundred-million-offers",
+        "codex": "hundred-million-offers"
       },
       "journeys": [
         "create-business",
@@ -3565,6 +3957,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "improve-app",
+        "codex": "improve-app"
+      },
       "journeys": [],
       "name": "improve-app",
       "paths": {
@@ -3595,6 +3991,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "improve-business",
+        "codex": "improve-business"
+      },
       "journeys": [],
       "name": "improve-business",
       "paths": {
@@ -3624,6 +4024,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "improve-code-quality",
+        "codex": "improve-code-quality"
       },
       "journeys": [],
       "name": "improve-code-quality",
@@ -3657,6 +4061,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "improve-retention",
+        "codex": "improve-retention"
+      },
       "journeys": [
         "grow-app"
       ],
@@ -3689,6 +4097,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "improve-website",
+        "codex": "improve-website"
+      },
       "journeys": [],
       "name": "improve-website",
       "paths": {
@@ -3720,6 +4132,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "influence-psychology",
+        "codex": "influence-psychology"
       },
       "journeys": [
         "improve-app",
@@ -3758,6 +4174,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "inspired-product",
+        "codex": "inspired-product"
+      },
       "journeys": [
         "grow-app"
       ],
@@ -3790,6 +4210,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "investigate",
+        "codex": null
+      },
       "journeys": [],
       "name": "investigate",
       "paths": {
@@ -3817,6 +4241,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ios-clean",
+        "codex": null
       },
       "journeys": [],
       "name": "ios-clean",
@@ -3846,6 +4274,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "ios-design-review",
+        "codex": null
+      },
       "journeys": [],
       "name": "ios-design-review",
       "paths": {
@@ -3873,6 +4305,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ios-fix",
+        "codex": null
       },
       "journeys": [],
       "name": "ios-fix",
@@ -3903,6 +4339,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ios-hig-design",
+        "codex": "ios-hig-design"
       },
       "journeys": [
         "create-app"
@@ -3936,6 +4376,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "ios-qa",
+        "codex": null
+      },
       "journeys": [],
       "name": "ios-qa",
       "paths": {
@@ -3963,6 +4407,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ios-sync",
+        "codex": null
       },
       "journeys": [],
       "name": "ios-sync",
@@ -3993,6 +4441,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "jobs-to-be-done",
+        "codex": "jobs-to-be-done"
       },
       "journeys": [
         "create-business",
@@ -4027,6 +4479,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-startup-advisor:knowledge-base-for-startups",
+        "codex": null
+      },
       "journeys": [],
       "name": "knowledge-base-for-startups",
       "paths": {
@@ -4054,6 +4510,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "land-and-deploy",
+        "codex": null
       },
       "journeys": [],
       "name": "land-and-deploy",
@@ -4083,6 +4543,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "landing-report",
+        "codex": null
+      },
       "journeys": [],
       "name": "landing-report",
       "paths": {
@@ -4110,6 +4574,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "launch-with-aws",
+        "codex": null
       },
       "journeys": [],
       "name": "launch-with-aws",
@@ -4140,6 +4608,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "lean-analytics",
+        "codex": "lean-analytics"
       },
       "journeys": [
         "improve-business",
@@ -4178,6 +4650,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "lean-startup",
+        "codex": "lean-startup"
+      },
       "journeys": [
         "create-business",
         "create-app"
@@ -4213,6 +4689,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "lean-ux",
+        "codex": "lean-ux"
+      },
       "journeys": [
         "grow-app"
       ],
@@ -4245,6 +4725,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "learn",
+        "codex": null
+      },
       "journeys": [],
       "name": "learn",
       "paths": {
@@ -4272,6 +4756,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:llm-to-bedrock",
+        "codex": null
       },
       "journeys": [],
       "name": "llm-to-bedrock",
@@ -4302,6 +4790,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "made-to-stick",
+        "codex": "made-to-stick"
       },
       "journeys": [
         "create-website",
@@ -4338,6 +4830,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "make-pdf",
+        "codex": null
+      },
       "journeys": [],
       "name": "make-pdf",
       "paths": {
@@ -4365,6 +4861,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "microinteractions",
+        "codex": "microinteractions"
       },
       "journeys": [
         "improve-app",
@@ -4402,6 +4902,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "mom-test",
+        "codex": "mom-test"
+      },
       "journeys": [
         "create-business"
       ],
@@ -4436,6 +4940,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "monetizing-innovation",
+        "codex": "monetizing-innovation"
+      },
       "journeys": [
         "create-business",
         "improve-business"
@@ -4468,6 +4976,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "negotiation",
+        "codex": "negotiation"
       },
       "journeys": [
         "improve-business",
@@ -4504,6 +5016,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "obviously-awesome",
+        "codex": "obviously-awesome"
+      },
       "journeys": [
         "create-business"
       ],
@@ -4536,6 +5052,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "office-hours",
+        "codex": null
+      },
       "journeys": [],
       "name": "office-hours",
       "paths": {
@@ -4566,6 +5086,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "one-page-marketing",
+        "codex": "one-page-marketing"
       },
       "journeys": [
         "create-website",
@@ -4601,6 +5125,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "open-gstack-browser",
+        "codex": null
+      },
       "journeys": [],
       "name": "open-gstack-browser",
       "paths": {
@@ -4628,6 +5156,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:operate-on-aws",
+        "codex": null
       },
       "journeys": [],
       "name": "operate-on-aws",
@@ -4657,6 +5189,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "pair-agent",
+        "codex": null
+      },
       "journeys": [],
       "name": "pair-agent",
       "paths": {
@@ -4684,6 +5220,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "plan-ceo-review",
+        "codex": null
       },
       "journeys": [],
       "name": "plan-ceo-review",
@@ -4713,6 +5253,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "plan-design-review",
+        "codex": null
+      },
       "journeys": [],
       "name": "plan-design-review",
       "paths": {
@@ -4740,6 +5284,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "plan-devex-review",
+        "codex": null
       },
       "journeys": [],
       "name": "plan-devex-review",
@@ -4769,6 +5317,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "plan-eng-review",
+        "codex": null
+      },
       "journeys": [],
       "name": "plan-eng-review",
       "paths": {
@@ -4796,6 +5348,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "plan-tune",
+        "codex": null
       },
       "journeys": [],
       "name": "plan-tune",
@@ -4826,6 +5382,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "pragmatic-programmer",
+        "codex": "pragmatic-programmer"
       },
       "journeys": [
         "create-app",
@@ -4865,6 +5425,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "predictable-revenue",
+        "codex": "predictable-revenue"
+      },
       "journeys": [
         "grow-business"
       ],
@@ -4897,6 +5461,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "aws-startup-advisor:prompt-library-for-startups",
+        "codex": null
+      },
       "journeys": [],
       "name": "prompt-library-for-startups",
       "paths": {
@@ -4924,6 +5492,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "qa",
+        "codex": null
       },
       "journeys": [],
       "name": "qa",
@@ -4953,6 +5525,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "qa-only",
+        "codex": null
+      },
       "journeys": [],
       "name": "qa-only",
       "paths": {
@@ -4980,6 +5556,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "superpowers:receiving-code-review",
+        "codex": null
       },
       "journeys": [],
       "name": "receiving-code-review",
@@ -5010,6 +5590,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "refactoring-patterns",
+        "codex": "refactoring-patterns"
       },
       "journeys": [
         "improve-code-quality",
@@ -5047,6 +5631,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "refactoring-ui",
+        "codex": "refactoring-ui"
+      },
       "journeys": [
         "create-website",
         "improve-website",
@@ -5083,6 +5671,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "release-it",
+        "codex": "release-it"
+      },
       "journeys": [
         "improve-code-quality",
         "remove-technical-debt",
@@ -5118,6 +5710,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "remove-technical-debt",
+        "codex": "remove-technical-debt"
+      },
       "journeys": [],
       "name": "remove-technical-debt",
       "paths": {
@@ -5148,6 +5744,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:requesting-code-review",
+        "codex": null
+      },
       "journeys": [],
       "name": "requesting-code-review",
       "paths": {
@@ -5176,6 +5776,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "retro",
+        "codex": null
+      },
       "journeys": [],
       "name": "retro",
       "paths": {
@@ -5203,6 +5807,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "review",
+        "codex": null
       },
       "journeys": [],
       "name": "review",
@@ -5233,6 +5841,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "scorecard-marketing",
+        "codex": "scorecard-marketing"
       },
       "journeys": [
         "create-website",
@@ -5267,6 +5879,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "scrape",
+        "codex": null
+      },
       "journeys": [],
       "name": "scrape",
       "paths": {
@@ -5294,6 +5910,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "setup-browser-cookies",
+        "codex": null
       },
       "journeys": [],
       "name": "setup-browser-cookies",
@@ -5323,6 +5943,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "setup-deploy",
+        "codex": null
+      },
       "journeys": [],
       "name": "setup-deploy",
       "paths": {
@@ -5350,6 +5974,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "setup-gbrain",
+        "codex": null
       },
       "journeys": [],
       "name": "setup-gbrain",
@@ -5379,6 +6007,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "ship",
+        "codex": null
+      },
       "journeys": [],
       "name": "ship",
       "paths": {
@@ -5407,6 +6039,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "signing-in-to-aws",
+        "codex": null
+      },
       "journeys": [],
       "name": "signing-in-to-aws",
       "paths": {
@@ -5434,6 +6070,10 @@
       "installed": {
         "claude": true,
         "codex": true
+      },
+      "invoke": {
+        "claude": "skill-finder",
+        "codex": "skill-finder"
       },
       "journeys": [],
       "name": "skill-finder",
@@ -5466,6 +6106,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "skillify",
+        "codex": null
+      },
       "journeys": [],
       "name": "skillify",
       "paths": {
@@ -5493,6 +6137,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "slides",
+        "codex": null
       },
       "journeys": [],
       "name": "slides",
@@ -5524,6 +6172,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "software-design-philosophy",
+        "codex": "software-design-philosophy"
       },
       "journeys": [
         "create-app",
@@ -5561,6 +6213,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "spec",
+        "codex": null
+      },
       "journeys": [],
       "name": "spec",
       "paths": {
@@ -5588,6 +6244,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:start-building-for-startups",
+        "codex": null
       },
       "journeys": [],
       "name": "start-building-for-startups",
@@ -5618,6 +6278,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "steve-jobs-design-review",
+        "codex": "steve-jobs-design-review"
       },
       "journeys": [
         "create-website",
@@ -5655,6 +6319,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "storybrand-messaging",
+        "codex": "storybrand-messaging"
+      },
       "journeys": [
         "create-website",
         "improve-website",
@@ -5690,6 +6358,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:subagent-driven-development",
+        "codex": null
+      },
       "journeys": [],
       "name": "subagent-driven-development",
       "paths": {
@@ -5717,6 +6389,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "sync-gbrain",
+        "codex": null
       },
       "journeys": [],
       "name": "sync-gbrain",
@@ -5747,6 +6423,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "system-design",
+        "codex": "system-design"
       },
       "journeys": [
         "create-app",
@@ -5783,6 +6463,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:systematic-debugging",
+        "codex": null
+      },
       "journeys": [],
       "name": "systematic-debugging",
       "paths": {
@@ -5812,6 +6496,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "team-topologies",
+        "codex": "team-topologies"
       },
       "journeys": [
         "improve-business"
@@ -5847,6 +6535,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "technical-documentation",
+        "codex": "technical-documentation"
+      },
       "journeys": [],
       "name": "technical-documentation",
       "paths": {
@@ -5877,6 +6569,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "test-audit",
+        "codex": null
+      },
       "journeys": [],
       "name": "test-audit",
       "paths": {
@@ -5905,6 +6601,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:test-driven-development",
+        "codex": null
+      },
       "journeys": [],
       "name": "test-driven-development",
       "paths": {
@@ -5932,6 +6632,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "aws-startup-advisor:tf-best-practices",
+        "codex": null
       },
       "journeys": [],
       "name": "tf-best-practices",
@@ -5962,6 +6666,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "top-design",
+        "codex": "top-design"
       },
       "journeys": [
         "create-website"
@@ -5997,6 +6705,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "traction-eos",
+        "codex": "traction-eos"
+      },
       "journeys": [
         "improve-business"
       ],
@@ -6029,6 +6741,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "ui-styling",
+        "codex": null
+      },
       "journeys": [],
       "name": "ui-styling",
       "paths": {
@@ -6056,6 +6772,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "unfreeze",
+        "codex": null
       },
       "journeys": [],
       "name": "unfreeze",
@@ -6085,6 +6805,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:using-git-worktrees",
+        "codex": null
+      },
       "journeys": [],
       "name": "using-git-worktrees",
       "paths": {
@@ -6112,6 +6836,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "superpowers:using-superpowers",
+        "codex": null
       },
       "journeys": [],
       "name": "using-superpowers",
@@ -6142,6 +6870,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "ux-heuristics",
+        "codex": "ux-heuristics"
       },
       "journeys": [
         "create-website",
@@ -6177,6 +6909,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "vercel-react-best-practices",
+        "codex": null
+      },
       "journeys": [],
       "name": "vercel-react-best-practices",
       "paths": {
@@ -6205,6 +6941,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:verification-before-completion",
+        "codex": null
+      },
       "journeys": [],
       "name": "verification-before-completion",
       "paths": {
@@ -6232,6 +6972,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "web-design-guidelines",
+        "codex": null
       },
       "journeys": [],
       "name": "web-design-guidelines",
@@ -6262,6 +7006,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "web-typography",
+        "codex": "web-typography"
       },
       "journeys": [
         "create-website",
@@ -6299,6 +7047,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "working-with-legacy-code",
+        "codex": "working-with-legacy-code"
+      },
       "journeys": [
         "improve-code-quality",
         "remove-technical-debt",
@@ -6333,6 +7085,10 @@
         "claude": true,
         "codex": false
       },
+      "invoke": {
+        "claude": "superpowers:writing-plans",
+        "codex": null
+      },
       "journeys": [],
       "name": "writing-plans",
       "paths": {
@@ -6360,6 +7116,10 @@
       "installed": {
         "claude": true,
         "codex": false
+      },
+      "invoke": {
+        "claude": "superpowers:writing-skills",
+        "codex": null
       },
       "journeys": [],
       "name": "writing-skills",

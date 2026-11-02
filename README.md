@@ -19,11 +19,11 @@ python3 -I "$SKILL_DIR/scripts/build_index.py"
 
 > `/skill-finder human type web design for my portfolio`
 
-The reply has five labelled parts: **Best fit**, **Also consider**, **Journey**, **Install** (only for skills you lack in the current tool), and **Try this** (a ready prompt such as `Use refactoring-ui to ... Start with the smallest first step.`).
+The reply has five labelled parts: **Best fit**, **Also consider**, **Journey**, **Install** (only for skills you lack in the current tool), and **Try this** (a ready prompt such as `Use refactoring-ui to ... Start with the smallest first step.`, naming plugin skills by their invoke name, e.g. `superpowers:brainstorming`).
 
 CLI directly: `python3 -I "$SKILL_DIR/scripts/find.py" "shoppers leave at checkout" --tool claude --top 5`
 
-Add `--json` for the full skill records. `installed` maps each tool (`claude`, `codex`) to true/false; `paths` maps each tool to a list of every `SKILL.md` found for that slug, in root order (the first is the one whose frontmatter was read).
+Add `--json` for the full skill records. `installed` maps each tool (`claude`, `codex`) to true/false; `paths` maps each tool to a list of every `SKILL.md` found for that slug, in root order (the first is the one whose frontmatter was read); `invoke` maps each tool to the name to call the skill by: `<plugin>:<skill>` for a Claude Code plugin skill (e.g. `superpowers:brainstorming`, also shown as an `Invoke (claude):` line in the Markdown output), the plain slug otherwise, and `null` for codex when the skill is neither installed nor installable there.
 
 ## Adding a source
 
