@@ -104,10 +104,12 @@ def _first(entries, field):
     return None
 
 
-def _install(entries, slug, plugin_ref):
-    for src, _ in entries:
+def _install(entries, plugin_ref):
+    # expand with the curated entry's slug: an alias-matched dir name may not exist in the source
+    for src, skill in entries:
         if src.get("install"):
-            return {a: expand_install(src["install"], slug, INSTALL_AGENT[a]) for a in AGENTS}
+            return {a: expand_install(src["install"], skill["slug"], INSTALL_AGENT[a])
+                    for a in AGENTS}
     if plugin_ref:
         return {"claude": f"/plugin install {plugin_ref}", "codex": None}
     return {"claude": None, "codex": None}
@@ -180,7 +182,7 @@ def build_index(roots, sources):
             "source": source,
             "sources_seen": seen,
             "author": author,
-            "install": _install(entries, slug, plugin_ref),
+            "install": _install(entries, plugin_ref),
             "installed": {a: a in paths for a in AGENTS},
             "paths": {a: str(p) for a, p in paths.items()},
             "journeys": journey_members.get(slug, []),

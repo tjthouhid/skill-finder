@@ -114,7 +114,7 @@ class BuildIndexTests(unittest.TestCase):
         self.assertNotIn("create-business", self.skills)  # uninstalled journey is not a skill record
         self.assertNotIn("create-business", self.stats["curated_not_installed"])
 
-    def test_alias_match_records_source_seen(self):
+    def test_slug_match_records_source_seen(self):
         # extra.json lists acme-pricing-wizard by slug; the installed record gets it
         self.assertEqual(self.skills["acme-pricing-wizard"]["source"], "extra")
         self.assertEqual(self.skills["acme-pricing-wizard"]["sources_seen"], ["extra"])
@@ -126,6 +126,76 @@ class BuildIndexTests(unittest.TestCase):
                          ("acme", "Acme", None))
         q = pathlib.Path("/h/.claude/plugins/cache/mk/plug/1.0/skills/foo/SKILL.md")
         self.assertEqual(detect_source("foo", {}, q, {}), ("plug", None, "plug@mk"))
+
+
+def _src(name, skills, install=None):
+    data = {"source": name, "label": name, "skills": skills}
+    if install:
+        data["install"] = install
+    return data
+
+
+def _skill(slug, summary="s", **extra):
+    return dict(slug=slug, summary=summary, **extra)
+
+
+class AliasPrecedenceTests(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self._tmp.cleanup)
+        self.root = pathlib.Path(self._tmp.name)
+
+    def install_dirs(self, *names):
+        for name in names:
+            d = self.root / name
+            d.mkdir()
+            (d / "SKILL.md").write_text(f"---\nname: {name}\ndescription: Dir {name}.\n---\n")
+
+    def build(self, sources):
+        index, stats = build_index({"claude": [self.root], "codex": []}, sources)
+        return index["skills"], stats
+
+    def test_alias_named_dir_uses_curated_slug_in_install(self):
+        self.install_dirs("foo-old")
+        skills, _ = self.build([_src("a", [_skill("foo", aliases=["foo-old"])],
+                                     install="inst {slug} {agent}")])
+        rec = skills["foo-old"]
+        self.assertEqual(rec["install"], {"claude": "inst foo claude-code",
+                                          "codex": "inst foo codex"})
+        self.assertEqual(rec["source"], "a")
+        self.assertEqual(rec["sources_seen"], ["a"])
+        self.assertTrue(rec["installed"]["claude"])
+
+    def test_alias_match_suppresses_duplicate_uninstalled_record(self):
+        self.install_dirs("foo-old")
+        skills, stats = self.build([_src("a", [_skill("foo", aliases=["foo-old"])])])
+        self.assertNotIn("foo", skills)
+        self.assertEqual(stats["curated_not_installed"], [])
+
+    def test_slug_match_beats_alias_match(self):
+        self.install_dirs("bar")
+        skills, stats = self.build([
+            _src("a", [_skill("bar", "BAR")], install="inst {slug}"),
+            _src("b", [_skill("baz", "BAZ", aliases=["bar"])], install="other {slug}"),
+        ])
+        rec = skills["bar"]
+        self.assertEqual(rec["summary"], "BAR")
+        self.assertEqual(rec["sources_seen"], ["a"])
+        self.assertEqual(rec["install"]["claude"], "inst bar")
+        # baz was not claimed by the alias, so it is still reported as not installed
+        self.assertEqual(stats["curated_not_installed"], ["baz"])
+        self.assertEqual(skills["baz"]["installed"], {"claude": False, "codex": False})
+
+    def test_alias_union_across_sources_and_earlier_summary_wins(self):
+        self.install_dirs("foo")
+        skills, _ = self.build([
+            _src("a", [_skill("foo", "FIRST", aliases=["x"])]),
+            _src("b", [_skill("foo", "SECOND", aliases=["y", "x"])]),
+        ])
+        rec = skills["foo"]
+        self.assertEqual(rec["aliases"], ["x", "y"])
+        self.assertEqual(rec["summary"], "FIRST")
+        self.assertEqual(rec["sources_seen"], ["a", "b"])
 
 
 class CliTests(unittest.TestCase):
