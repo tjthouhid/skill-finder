@@ -168,6 +168,11 @@ class AliasPrecedenceTests(unittest.TestCase):
             d.mkdir()
             (d / "SKILL.md").write_text(f"---\nname: {name}\ndescription: Dir {name}.\n---\n")
 
+    def write_dir(self, name, front):
+        d = self.root / name
+        d.mkdir()
+        (d / "SKILL.md").write_text(f"---\n{front}\ndescription: Dir {name}.\n---\n")
+
     def build(self, sources):
         index, stats = build_index({"claude": [self.root], "codex": []}, sources)
         return index["skills"], stats
@@ -199,6 +204,38 @@ class AliasPrecedenceTests(unittest.TestCase):
         self.assertEqual(rec["paths"], {"claude": [str(self.root / "foo" / "SKILL.md"),
                                                    str(second / "foo" / "SKILL.md")]})
         self.assertEqual(rec["description"], "Dir foo.")  # first path's frontmatter is read
+
+    def test_alias_does_not_hijack_unrelated_dir(self):
+        self.write_dir("refactoring", "name: refactoring\nmetadata:\n  author: someone-else")
+        skills, stats = self.build([_src("wondel", [_skill("refactoring-patterns", "REAL",
+                                                           aliases=["refactoring"])])])
+        rec = skills["refactoring"]
+        self.assertEqual(rec["summary"], "Dir refactoring.")
+        self.assertEqual(rec["source"], "someone-else")
+        self.assertEqual(rec["sources_seen"], [])
+        self.assertEqual(stats["curated_not_installed"], ["refactoring-patterns"])
+
+    def test_alias_claims_dir_by_source_author(self):
+        self.write_dir("refactoring", "name: refactoring\nmetadata:\n  author: wondelai")
+        skills, stats = self.build([_src("wondel", [_skill("refactoring-patterns", "REAL",
+                                                           aliases=["refactoring"])])])
+        self.assertEqual(skills["refactoring"]["summary"], "REAL")
+        self.assertEqual(stats["curated_not_installed"], [])
+
+    def test_alias_claims_dir_whose_name_is_the_curated_slug(self):
+        self.write_dir("foo-old", "name: foo\nmetadata:\n  author: x")
+        skills, stats = self.build([_src("a", [_skill("foo", "FOO", aliases=["foo-old"])])])
+        self.assertEqual(skills["foo-old"]["summary"], "FOO")
+        self.assertEqual(stats["curated_not_installed"], [])
+
+    def test_ambiguous_alias_claims_nothing(self):
+        self.install_dirs("shared")
+        skills, stats = self.build([
+            _src("a", [_skill("one", aliases=["shared"])]),
+            _src("b", [_skill("two", aliases=["shared"])]),
+        ])
+        self.assertEqual(skills["shared"]["sources_seen"], [])
+        self.assertEqual(stats["curated_not_installed"], ["one", "two"])
 
     def test_slug_match_beats_alias_match(self):
         self.install_dirs("bar")

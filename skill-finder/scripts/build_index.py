@@ -43,9 +43,7 @@ def detect_source(slug, meta, path, source_index):
 
     source_index maps a slug (or alias) to {"sources_seen": [...], ...}; its first source wins.
     """
-    metadata = meta.get("metadata")
-    author = metadata.get("author") if isinstance(metadata, dict) else None
-    author = author.strip() if isinstance(author, str) and author.strip() else None
+    author = _author(meta)
     plugin_ref = _plugin_ref(Path(path))
     seen = (source_index.get(slug) or {}).get("sources_seen")
     if seen:
@@ -115,6 +113,30 @@ def _install(entries, plugin_ref):
     return {"claude": None, "codex": None}
 
 
+def _author(meta):
+    metadata = meta.get("metadata")
+    author = metadata.get("author") if isinstance(metadata, dict) else None
+    return author.strip() if isinstance(author, str) and author.strip() else None
+
+
+def _claim_entries(slug, meta, entries):
+    """Curated entries an installed dir may take: its own slug's, else alias entries it proves.
+
+    An alias claims the dir when the dir's frontmatter name is the curated slug, its author
+    matches the source (author "wondelai" for source "wondel"), or it has no author and the alias
+    names one curated skill across all sources. Otherwise an unrelated dir that happens to share
+    an alias's name (e.g. "refactoring") keeps its own identity.
+    """
+    primary = [e for e in entries if e[1]["slug"] == slug]
+    if primary:
+        return primary
+    author = _author(meta)
+    unique = len({sk["slug"] for _, sk in entries}) == 1
+    return [(src, sk) for src, sk in entries
+            if meta.get("name") == sk["slug"]
+            or (author.lower().startswith(src["source"]) if author else unique)]
+
+
 def _read_installed(roots, skipped):
     """Return {slug: {"paths": {agent: [Path, ...]}, "meta": dict}}.
 
@@ -152,10 +174,9 @@ def build_index(roots, sources):
     installed = _read_installed(roots, skipped)
 
     curated_slugs = _distinct(sk["slug"] for src in sources for sk in src["skills"])
-    claimed = set()  # curated slugs satisfied by an installed dir matching one of their aliases
-    for slug in installed:
-        for _, skill in source_index.get(slug, {}).get("entries", []):
-            claimed.add(skill["slug"])
+    claims = {slug: _claim_entries(slug, info["meta"], source_index.get(slug, {}).get("entries", []))
+              for slug, info in installed.items()}
+    claimed = {skill["slug"] for entries in claims.values() for _, skill in entries}
 
     journey_members = {}
     journeys, seen_journeys = [], set()
@@ -199,11 +220,7 @@ def build_index(roots, sources):
 
     skills = {}
     for slug, info in installed.items():
-        hit = source_index.get(slug, {})
-        entries = hit.get("entries", [])
-        # a slug match wins over alias matches (see _index_sources); keep only the entries for this skill
-        primary = [e for e in entries if e[1]["slug"] == slug]
-        entries = primary or entries
+        entries = claims[slug]
         seen = _distinct(s["source"] for s, _ in entries)
         meta = info["meta"]
         first_path = (info["paths"].get("claude") or info["paths"]["codex"])[0]
