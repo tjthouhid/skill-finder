@@ -29,7 +29,7 @@ Always run them as `python3 -I "$SKILL_DIR/scripts/<name>.py"` (stdlib only, no 
    - **Also consider** — up to 2 more.
    - **Journey** — if applicable.
    - **Install** — only lines for skills missing in the current tool, copied from the `Install (<tool>):` lines in the output; for unknown-source skills say "already installed" (or "no known install source" if missing).
-   - **Try this** — one ready prompt: `Use <name> [and <name>] to <user's goal in their words>. Start with the smallest first step.` `<name>` is the `Invoke (<tool>):` value when the output shows one (plugin skills, e.g. `superpowers:brainstorming`), else the slug.
+   - **Try this** — one ready prompt: `Use <name> [and <name>] to <user's goal in their words>.` Add `Start with the smallest first step.` when the user fixes or improves something that exists; leave it off when they build something new from scratch, so the agent designs the whole thing. `<name>` is the `Invoke (<tool>):` value when the output shows one (plugin skills, e.g. `superpowers:brainstorming`), else the slug.
 5. If the output says `No match.` or nothing fits, say so and suggest the closest category it lists, or run `build_index.py` if the index looks stale.
 6. Never invent install commands or skills not in the index.
 
