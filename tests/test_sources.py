@@ -75,6 +75,16 @@ class LoadSources(unittest.TestCase):
         self.assertEqual(len(warnings), 1)
         self.assertTrue(warnings[0].startswith("broken.json: "))
 
+    def test_non_utf8_file_warns_and_valid_file_still_loads(self):
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d)
+            (p / "a_binary.json").write_bytes(b"\xff\xfe")
+            (p / "b_ok.json").write_text(json.dumps(load("extra.json")), encoding="utf-8")
+            sources, warnings = load_sources(p)
+        self.assertEqual([s["source"] for s in sources], ["extra"])
+        self.assertEqual(len(warnings), 1)
+        self.assertTrue(warnings[0].startswith("a_binary.json: "))
+
     def test_real_data_dir_loads_clean(self):
         real = pathlib.Path(__file__).resolve().parents[1] / "skill-finder" / "data" / "sources"
         sources, warnings = load_sources(real)

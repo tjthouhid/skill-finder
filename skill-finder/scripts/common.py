@@ -310,7 +310,7 @@ def load_sources(sources_dir):
             continue
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError) as exc:
+        except (ValueError, OSError, RecursionError) as exc:
             warnings.append(f"{path.name}: {exc}")
             continue
         errors = validate_source(data)
