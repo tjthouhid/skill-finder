@@ -55,6 +55,9 @@ JOURNEY_WEIGHTS = (("name", 4), ("tagline", 3), ("fits", 3))
 SYNONYM_WEIGHT = 0.5
 NO_STEM = {"landing"}
 MIN_SCORE = 1.0
+# A term found in more skills than this share (and this count) is weak evidence: "design" alone
+COMMON_SHARE = 0.05
+COMMON_MIN = 5
 MAX_INDEX_AGE = timedelta(days=30)
 _USE_PREFIX = re.compile(r"^use\b(?:\s+(?:when|for|before|whenever|as|in)\b)?[:\s]*", re.I)
 
@@ -95,6 +98,27 @@ def expand(tokens, raw):
             for t in tokenize(syn):
                 terms.setdefault(t, SYNONYM_WEIGHT)
     return terms
+
+
+def damp_common(terms, records):
+    """Return terms with weights lowered for terms that appear in many records.
+
+    A term in more than max(COMMON_SHARE * n, COMMON_MIN) of the n records is scaled by
+    log(1 + n/df) / log(1 + n/threshold), so it still counts, but less than a rare term.
+    """
+    records = list(records)
+    n = len(records)
+    threshold = max(COMMON_SHARE * n, COMMON_MIN)
+    df = dict.fromkeys(terms, 0)
+    for rec in records:
+        seen = set()
+        for field, _ in FIELD_WEIGHTS:
+            seen.update(tokenize(_field_text(rec, field)))
+        for t in terms:
+            if t in seen:
+                df[t] += 1
+    return {t: w * math.log(1 + n / df[t]) / math.log(1 + n / threshold) if df[t] > threshold else w
+            for t, w in terms.items()}
 
 
 def score_text(terms, text, weight):
@@ -143,7 +167,7 @@ def score_journey(terms, bigrams, j):
 
 def search(index, query, top=8):
     tokens = tokenize(query)
-    terms = expand(tokens, query)
+    terms = damp_common(expand(tokens, query), index.get("skills", {}).values())
     bigrams = _bigrams(tokens)
     skills = []
     for slug, rec in index.get("skills", {}).items():

@@ -14,8 +14,8 @@ SCRIPTS = ROOT / "skill-finder" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 from common import load_sources
 from build_index import build_index
-from find import (_bigrams, _clean_use_when, expand, main, render_markdown, score_journey,
-                  score_skill, search, tokenize)
+from find import (_bigrams, _clean_use_when, damp_common, expand, main, render_markdown,
+                  score_journey, score_skill, search, tokenize)
 
 FIX = ROOT / "tests" / "fixtures"
 REAL_SOURCES = ROOT / "skill-finder" / "data" / "sources"
@@ -53,6 +53,26 @@ class FindTests(unittest.TestCase):
     def test_human_web_design(self):
         got = set(top_slugs("human type web design, not generic"))
         self.assertTrue(got & {"refactoring-ui", "design-taste-frontend"}, got)
+
+    def test_common_word_alone_does_not_win(self):
+        # "design" names many skills; system-design matches nothing else in this query
+        self.assertNotIn("system-design", top_slugs("human type web design for my portfolio"))
+
+    def test_system_design_queries_still_find_it(self):
+        self.assertEqual(top_slugs("system design for a chat app")[0], "system-design")
+        self.assertIn("system-design", top_slugs("design a url shortener"))
+
+    def test_damp_common_lowers_frequent_terms_only(self):
+        records = [{"summary": "design thing %d" % i} for i in range(40)]
+        records[0]["summary"] += " portfolio"
+        terms = damp_common({"design": 1.0, "portfolio": 1.0, "ui": 0.5}, records)
+        self.assertLess(terms["design"], 0.5)
+        self.assertEqual(terms["portfolio"], 1.0)
+        self.assertEqual(terms["ui"], 0.5)
+
+    def test_damp_common_leaves_small_indexes_alone(self):
+        records = [{"summary": "design"} for _ in range(5)]
+        self.assertEqual(damp_common({"design": 1.0}, records), {"design": 1.0})
 
     def test_checkout(self):
         self.assertIn("cro-methodology", top_slugs("shoppers leave at checkout"))

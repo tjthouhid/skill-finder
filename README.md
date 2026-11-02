@@ -18,7 +18,8 @@ Skill Finder has three parts:
   writes the result to `data/skills.json`.
 - **A ranker.** `find.py` scores every skill in the index against your
   request by keyword overlap and prints the best matches, with an install
-  command for each one you're missing.
+  command for each one you're missing. Words that appear in many skills,
+  such as "design", count for less than rare words, such as "portfolio".
 - **A skill.** `SKILL.md` tells your agent when to run `find.py` and how to
   turn its output into a short recommendation.
 
@@ -111,14 +112,14 @@ skipped (0):
 To confirm that Skill Finder can find itself, run:
 
 ```sh
-python3 -I "$SKILL_DIR/scripts/find.py" "which skill finds skills" --top 1
+python3 -I "$SKILL_DIR/scripts/find.py" "skill finder" --top 1
 ```
 
 The first result is `skill-finder`, marked as installed:
 
 ```text
 ## Skills
-1. skill-finder  [installed: claude ✓ codex ✓]  score 8.91  (tjthouhid)
+1. skill-finder  [installed: claude ✓ codex ✓]  score 8.67  (tjthouhid)
    Recommend which installed agent skill to use for a task.
 ```
 
