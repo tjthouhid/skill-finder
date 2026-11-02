@@ -221,11 +221,12 @@ def load_index(path):
 
 def index_problem(index, now=None):
     """Return a reason string when the index is foreign to this machine or stale, else None."""
-    home = str(Path.home())
+    home = Path.home().parts
     roots = index.get("roots")
-    claude = roots.get("claude") if isinstance(roots, dict) else None
-    if not isinstance(claude, list) or not any(
-            isinstance(r, str) and r.startswith(home) for r in claude):
+    recorded = [r for v in (roots.values() if isinstance(roots, dict) else ())
+                if isinstance(v, list) for r in v if isinstance(r, str)]
+    # No recorded roots: nothing to compare, treat as local. Otherwise at least one must sit under HOME.
+    if recorded and not any(Path(r).parts[:len(home)] == home for r in recorded):
         return "built for another machine"
     try:
         built = datetime.strptime(index["generated_at"], "%Y-%m-%dT%H:%M:%SZ")

@@ -176,6 +176,21 @@ class IndexFreshnessTests(unittest.TestCase):
         self.assertIn("another machine or is stale", err)
         self.assertIn("build_index.py", err)
 
+    def test_codex_only_roots_are_local(self):
+        idx = _local_index()
+        idx["roots"] = {"claude": [], "codex": [str(pathlib.Path.home() / ".codex" / "skills")]}
+        self.assertEqual(_run(idx)[0], 0)
+
+    def test_no_recorded_roots_is_local(self):
+        idx = _local_index()
+        idx["roots"] = {"claude": [], "codex": []}
+        self.assertEqual(_run(idx)[0], 0)
+
+    def test_sibling_home_is_foreign(self):
+        idx = _local_index()
+        idx["roots"] = {"claude": [str(pathlib.Path.home()) + "2/.claude/skills"], "codex": []}
+        self.assertEqual(_run(idx)[0], 2)
+
     def test_stale_index_exit_2(self):
         rc, _, err = _run(_local_index(days_old=31))
         self.assertEqual(rc, 2)
