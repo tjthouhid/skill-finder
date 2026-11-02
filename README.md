@@ -23,6 +23,8 @@ The reply has five labelled parts: **Best fit**, **Also consider**, **Journey**,
 
 CLI directly: `python3 -I "$SKILL_DIR/scripts/find.py" "shoppers leave at checkout" --tool claude --top 5`
 
+Add `--json` for the full skill records. `installed` maps each tool (`claude`, `codex`) to true/false; `paths` maps each tool to a list of every `SKILL.md` found for that slug, in root order (the first is the one whose frontmatter was read).
+
 ## Adding a source
 
 Say "add these skills to skill finder" with a URL, file, or pasted list. The agent extracts skills, asks you to confirm, writes `$SKILL_DIR/data/sources/<source>.json`, and rebuilds the index. The file format is in [`data/sources/_schema.md`](skill-finder/data/sources/_schema.md).

@@ -49,8 +49,8 @@ class BuildIndexTests(unittest.TestCase):
     def test_same_slug_two_roots(self):
         rec = self.skills["refactoring-ui"]
         self.assertEqual(rec["installed"], {"claude": True, "codex": True})
-        self.assertIn("claude", rec["paths"])
-        self.assertIn("codex", rec["paths"])
+        self.assertEqual(rec["paths"], {"claude": [str(CLAUDE / "refactoring-ui" / "SKILL.md")],
+                                        "codex": [str(CODEX / "refactoring-ui" / "SKILL.md")]})
 
     def test_wondel_enrichment_and_install(self):
         rec = self.skills["refactoring-ui"]
@@ -180,6 +180,17 @@ class AliasPrecedenceTests(unittest.TestCase):
         skills, stats = self.build([_src("a", [_skill("foo", aliases=["foo-old"])])])
         self.assertNotIn("foo", skills)
         self.assertEqual(stats["curated_not_installed"], [])
+
+    def test_same_slug_two_roots_one_agent_keeps_all_paths(self):
+        self.install_dirs("foo")
+        second = self.root / "second"
+        (second / "foo").mkdir(parents=True)
+        (second / "foo" / "SKILL.md").write_text("---\nname: foo\ndescription: Second.\n---\n")
+        index, _ = build_index({"claude": [self.root, second], "codex": []}, [])
+        rec = index["skills"]["foo"]
+        self.assertEqual(rec["paths"], {"claude": [str(self.root / "foo" / "SKILL.md"),
+                                                   str(second / "foo" / "SKILL.md")]})
+        self.assertEqual(rec["description"], "Dir foo.")  # first path's frontmatter is read
 
     def test_slug_match_beats_alias_match(self):
         self.install_dirs("bar")

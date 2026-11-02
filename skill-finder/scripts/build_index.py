@@ -116,25 +116,28 @@ def _install(entries, plugin_ref):
 
 
 def _read_installed(roots, skipped):
-    """Return {slug: {"paths": {agent: Path}, "meta": dict, "plugin_ref": str|None}}."""
+    """Return {slug: {"paths": {agent: [Path, ...]}, "meta": dict}}.
+
+    Every root holding the slug is kept, in root order; only an agent's first path is parsed.
+    """
     paths = {}
     for agent in AGENTS:
         for root in roots.get(agent, []):
             for slug, path in scan_root(Path(root)).items():
-                paths.setdefault(slug, {}).setdefault(agent, path)
+                paths.setdefault(slug, {}).setdefault(agent, []).append(path)
     installed = {}
     for slug in sorted(paths):
         good, meta = {}, None
         for agent in AGENTS:
-            path = paths[slug].get(agent)
-            if path is None:
+            found = paths[slug].get(agent)
+            if not found:
                 continue
             try:
-                parsed, _ = parse_frontmatter(path.read_text(encoding="utf-8"))
+                parsed, _ = parse_frontmatter(found[0].read_text(encoding="utf-8"))
             except (ValueError, OSError) as exc:
-                skipped.append(f"{slug}: {path}: {exc}")
+                skipped.append(f"{slug}: {found[0]}: {exc}")
                 continue
-            good[agent] = path
+            good[agent] = found
             if meta is None:
                 meta = parsed
         if good:
@@ -184,7 +187,7 @@ def build_index(roots, sources):
             "author": author,
             "install": _install(entries, plugin_ref),
             "installed": {a: a in paths for a in AGENTS},
-            "paths": {a: str(p) for a, p in paths.items()},
+            "paths": {a: [str(p) for p in ps] for a, ps in paths.items()},
             "journeys": journey_members.get(slug, []),
             "aliases": aliases,
         }
@@ -198,7 +201,7 @@ def build_index(roots, sources):
         entries = primary or entries
         seen = _distinct(s["source"] for s, _ in entries)
         meta = info["meta"]
-        first_path = info["paths"].get("claude") or info["paths"]["codex"]
+        first_path = (info["paths"].get("claude") or info["paths"]["codex"])[0]
         source, author, plugin_ref = detect_source(slug, meta, first_path,
                                                    {slug: {"sources_seen": seen}} if seen else {})
         skills[slug] = record(slug, entries, seen, meta, info["paths"], plugin_ref, source, author)

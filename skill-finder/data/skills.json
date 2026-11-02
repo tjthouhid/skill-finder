@@ -9,7 +9,7 @@
     "Strategy & Growth",
     "Team & Operations"
   ],
-  "generated_at": "2026-11-02T15:16:40Z",
+  "generated_at": "2026-11-02T15:30:01Z",
   "journeys": [
     {
       "fits": "new business idea to test and position before investing",
@@ -671,7 +671,9 @@
       ],
       "name": "37signals-way",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/37signals-way/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/37signals-way/SKILL.md"
+        ]
       },
       "slug": "37signals-way",
       "source": "wondel",
@@ -699,7 +701,9 @@
       "journeys": [],
       "name": "_gstack-command",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/_gstack-command/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/_gstack-command/SKILL.md"
+        ]
       },
       "slug": "_gstack-command",
       "source": "gstack",
@@ -725,7 +729,9 @@
       "journeys": [],
       "name": "agent-advisor",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/agent-advisor/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/agent-advisor/SKILL.md"
+        ]
       },
       "slug": "agent-advisor",
       "source": "aws-startup-advisor",
@@ -751,7 +757,9 @@
       "journeys": [],
       "name": "amazon-bedrock",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/amazon-bedrock/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/amazon-bedrock/SKILL.md"
+        ]
       },
       "slug": "amazon-bedrock",
       "source": "unknown",
@@ -777,7 +785,9 @@
       "journeys": [],
       "name": "architect-for-startups",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/architect-for-startups/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/architect-for-startups/SKILL.md"
+        ]
       },
       "slug": "architect-for-startups",
       "source": "aws-startup-advisor",
@@ -803,7 +813,9 @@
       "journeys": [],
       "name": "architecture-optimization",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/architecture-optimization/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/architecture-optimization/SKILL.md"
+        ]
       },
       "slug": "architecture-optimization",
       "source": "wondel",
@@ -831,7 +843,9 @@
       "journeys": [],
       "name": "autoplan",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/autoplan/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/autoplan/SKILL.md"
+        ]
       },
       "slug": "autoplan",
       "source": "gstack",
@@ -857,7 +871,9 @@
       "journeys": [],
       "name": "aws-ai-ml",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-ai-ml/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-ai-ml/SKILL.md"
+        ]
       },
       "slug": "aws-ai-ml",
       "source": "unknown",
@@ -883,7 +899,9 @@
       "journeys": [],
       "name": "aws-auth",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-auth/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-auth/SKILL.md"
+        ]
       },
       "slug": "aws-auth",
       "source": "unknown",
@@ -909,7 +927,9 @@
       "journeys": [],
       "name": "aws-billing-and-cost-management",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-billing-and-cost-management/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-billing-and-cost-management/SKILL.md"
+        ]
       },
       "slug": "aws-billing-and-cost-management",
       "source": "unknown",
@@ -935,7 +955,9 @@
       "journeys": [],
       "name": "aws-blocks",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-blocks/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-blocks/SKILL.md"
+        ]
       },
       "slug": "aws-blocks",
       "source": "unknown",
@@ -961,7 +983,9 @@
       "journeys": [],
       "name": "aws-cdk",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-cdk/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-cdk/SKILL.md"
+        ]
       },
       "slug": "aws-cdk",
       "source": "unknown",
@@ -987,7 +1011,9 @@
       "journeys": [],
       "name": "aws-cloudformation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-cloudformation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-cloudformation/SKILL.md"
+        ]
       },
       "slug": "aws-cloudformation",
       "source": "unknown",
@@ -1013,7 +1039,9 @@
       "journeys": [],
       "name": "aws-compute",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-compute/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-compute/SKILL.md"
+        ]
       },
       "slug": "aws-compute",
       "source": "unknown",
@@ -1039,7 +1067,9 @@
       "journeys": [],
       "name": "aws-containers",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-containers/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-containers/SKILL.md"
+        ]
       },
       "slug": "aws-containers",
       "source": "unknown",
@@ -1065,7 +1095,9 @@
       "journeys": [],
       "name": "aws-database",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-database/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-database/SKILL.md"
+        ]
       },
       "slug": "aws-database",
       "source": "unknown",
@@ -1091,7 +1123,9 @@
       "journeys": [],
       "name": "aws-deployment",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-deployment/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-deployment/SKILL.md"
+        ]
       },
       "slug": "aws-deployment",
       "source": "unknown",
@@ -1117,7 +1151,9 @@
       "journeys": [],
       "name": "aws-iam",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-iam/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-iam/SKILL.md"
+        ]
       },
       "slug": "aws-iam",
       "source": "unknown",
@@ -1143,7 +1179,9 @@
       "journeys": [],
       "name": "aws-messaging-and-streaming",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-messaging-and-streaming/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-messaging-and-streaming/SKILL.md"
+        ]
       },
       "slug": "aws-messaging-and-streaming",
       "source": "unknown",
@@ -1169,7 +1207,9 @@
       "journeys": [],
       "name": "aws-networking",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-networking/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-networking/SKILL.md"
+        ]
       },
       "slug": "aws-networking",
       "source": "unknown",
@@ -1195,7 +1235,9 @@
       "journeys": [],
       "name": "aws-observability",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-observability/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-observability/SKILL.md"
+        ]
       },
       "slug": "aws-observability",
       "source": "unknown",
@@ -1221,7 +1263,9 @@
       "journeys": [],
       "name": "aws-sdk-js-v3-usage",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-sdk-js-v3-usage/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-sdk-js-v3-usage/SKILL.md"
+        ]
       },
       "slug": "aws-sdk-js-v3-usage",
       "source": "unknown",
@@ -1247,7 +1291,9 @@
       "journeys": [],
       "name": "aws-sdk-python-usage",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-sdk-python-usage/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-sdk-python-usage/SKILL.md"
+        ]
       },
       "slug": "aws-sdk-python-usage",
       "source": "unknown",
@@ -1273,7 +1319,9 @@
       "journeys": [],
       "name": "aws-sdk-swift-usage",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-sdk-swift-usage/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-sdk-swift-usage/SKILL.md"
+        ]
       },
       "slug": "aws-sdk-swift-usage",
       "source": "unknown",
@@ -1299,7 +1347,9 @@
       "journeys": [],
       "name": "aws-security",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-security/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-security/SKILL.md"
+        ]
       },
       "slug": "aws-security",
       "source": "unknown",
@@ -1325,7 +1375,9 @@
       "journeys": [],
       "name": "aws-serverless",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-serverless/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-serverless/SKILL.md"
+        ]
       },
       "slug": "aws-serverless",
       "source": "unknown",
@@ -1351,7 +1403,9 @@
       "journeys": [],
       "name": "aws-storage",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-storage/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-storage/SKILL.md"
+        ]
       },
       "slug": "aws-storage",
       "source": "unknown",
@@ -1377,7 +1431,9 @@
       "journeys": [],
       "name": "aws-well-architected-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/aws-well-architected-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/aws-well-architected-review/SKILL.md"
+        ]
       },
       "slug": "aws-well-architected-review",
       "source": "unknown",
@@ -1403,7 +1459,9 @@
       "journeys": [],
       "name": "azure-to-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/azure-to-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/azure-to-aws/SKILL.md"
+        ]
       },
       "slug": "azure-to-aws",
       "source": "aws-startup-advisor",
@@ -1429,7 +1487,9 @@
       "journeys": [],
       "name": "banner-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/banner-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/banner-design/SKILL.md"
+        ]
       },
       "slug": "banner-design",
       "source": "claudekit",
@@ -1455,7 +1515,9 @@
       "journeys": [],
       "name": "benchmark",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/benchmark/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/benchmark/SKILL.md"
+        ]
       },
       "slug": "benchmark",
       "source": "gstack",
@@ -1481,7 +1543,9 @@
       "journeys": [],
       "name": "benchmark-models",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/benchmark-models/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/benchmark-models/SKILL.md"
+        ]
       },
       "slug": "benchmark-models",
       "source": "gstack",
@@ -1511,7 +1575,9 @@
       ],
       "name": "blue-ocean-strategy",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/blue-ocean-strategy/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/blue-ocean-strategy/SKILL.md"
+        ]
       },
       "slug": "blue-ocean-strategy",
       "source": "wondel",
@@ -1539,7 +1605,9 @@
       "journeys": [],
       "name": "brainstorming",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/brainstorming/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/brainstorming/SKILL.md"
+        ]
       },
       "slug": "brainstorming",
       "source": "superpowers",
@@ -1565,7 +1633,9 @@
       "journeys": [],
       "name": "brand",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/brand/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/brand/SKILL.md"
+        ]
       },
       "slug": "brand",
       "source": "claudekit",
@@ -1591,7 +1661,9 @@
       "journeys": [],
       "name": "browse",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/browse/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/browse/SKILL.md"
+        ]
       },
       "slug": "browse",
       "source": "gstack",
@@ -1617,7 +1689,9 @@
       "journeys": [],
       "name": "canary",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/canary/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/canary/SKILL.md"
+        ]
       },
       "slug": "canary",
       "source": "gstack",
@@ -1643,7 +1717,9 @@
       "journeys": [],
       "name": "careful",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/careful/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/careful/SKILL.md"
+        ]
       },
       "slug": "careful",
       "source": "gstack",
@@ -1669,7 +1745,9 @@
       "journeys": [],
       "name": "caveman",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/caveman/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/caveman/SKILL.md"
+        ]
       },
       "slug": "caveman",
       "source": "unknown",
@@ -1695,7 +1773,9 @@
       "journeys": [],
       "name": "claude-security",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/claude-security/0.12.0/skills/claude-security/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/claude-security/0.12.0/skills/claude-security/SKILL.md"
+        ]
       },
       "slug": "claude-security",
       "source": "claude-security",
@@ -1729,7 +1809,9 @@
       ],
       "name": "clean-architecture",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/clean-architecture/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/clean-architecture/SKILL.md"
+        ]
       },
       "slug": "clean-architecture",
       "source": "wondel",
@@ -1763,7 +1845,9 @@
       ],
       "name": "clean-code",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/clean-code/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/clean-code/SKILL.md"
+        ]
       },
       "slug": "clean-code",
       "source": "wondel",
@@ -1791,7 +1875,9 @@
       "journeys": [],
       "name": "codex",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/codex/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/codex/SKILL.md"
+        ]
       },
       "slug": "codex",
       "source": "gstack",
@@ -1821,7 +1907,9 @@
       ],
       "name": "cold-start-problem",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/cold-start-problem/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/cold-start-problem/SKILL.md"
+        ]
       },
       "slug": "cold-start-problem",
       "source": "wondel",
@@ -1849,7 +1937,9 @@
       "journeys": [],
       "name": "connect-chrome",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/connect-chrome/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/connect-chrome/SKILL.md"
+        ]
       },
       "slug": "connect-chrome",
       "source": "unknown",
@@ -1878,7 +1968,9 @@
       ],
       "name": "contagious",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/contagious/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/contagious/SKILL.md"
+        ]
       },
       "slug": "contagious",
       "source": "wondel",
@@ -1906,7 +1998,9 @@
       "journeys": [],
       "name": "context-restore",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/context-restore/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/context-restore/SKILL.md"
+        ]
       },
       "slug": "context-restore",
       "source": "gstack",
@@ -1932,7 +2026,9 @@
       "journeys": [],
       "name": "context-save",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/context-save/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/context-save/SKILL.md"
+        ]
       },
       "slug": "context-save",
       "source": "gstack",
@@ -1958,7 +2054,9 @@
       "journeys": [],
       "name": "contextual-offers-for-startups",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/contextual-offers-for-startups/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/contextual-offers-for-startups/SKILL.md"
+        ]
       },
       "slug": "contextual-offers-for-startups",
       "source": "aws-startup-advisor",
@@ -1988,7 +2086,9 @@
       ],
       "name": "continuous-discovery",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/continuous-discovery/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/continuous-discovery/SKILL.md"
+        ]
       },
       "slug": "continuous-discovery",
       "source": "wondel",
@@ -2016,7 +2116,9 @@
       "journeys": [],
       "name": "conversion-optimization",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/conversion-optimization/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/conversion-optimization/SKILL.md"
+        ]
       },
       "slug": "conversion-optimization",
       "source": "wondel",
@@ -2044,7 +2146,9 @@
       "journeys": [],
       "name": "create-app",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/create-app/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/create-app/SKILL.md"
+        ]
       },
       "slug": "create-app",
       "source": "wondel",
@@ -2072,7 +2176,9 @@
       "journeys": [],
       "name": "create-business",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/create-business/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/create-business/SKILL.md"
+        ]
       },
       "slug": "create-business",
       "source": "wondel",
@@ -2100,7 +2206,9 @@
       "journeys": [],
       "name": "create-website",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/create-website/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/create-website/SKILL.md"
+        ]
       },
       "slug": "create-website",
       "source": "wondel",
@@ -2135,7 +2243,9 @@
       ],
       "name": "cro-methodology",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/cro-methodology/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/cro-methodology/SKILL.md"
+        ]
       },
       "slug": "cro-methodology",
       "source": "wondel",
@@ -2168,7 +2278,9 @@
       ],
       "name": "crossing-the-chasm",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/crossing-the-chasm/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/crossing-the-chasm/SKILL.md"
+        ]
       },
       "slug": "crossing-the-chasm",
       "source": "wondel",
@@ -2196,7 +2308,9 @@
       "journeys": [],
       "name": "cso",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/cso/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/cso/SKILL.md"
+        ]
       },
       "slug": "cso",
       "source": "gstack",
@@ -2228,7 +2342,9 @@
       ],
       "name": "ddia-systems",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ddia-systems/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ddia-systems/SKILL.md"
+        ]
       },
       "slug": "ddia-systems",
       "source": "wondel",
@@ -2256,7 +2372,9 @@
       "journeys": [],
       "name": "design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design/SKILL.md"
+        ]
       },
       "slug": "design",
       "source": "claudekit",
@@ -2282,7 +2400,9 @@
       "journeys": [],
       "name": "design-code-architecture",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-code-architecture/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-code-architecture/SKILL.md"
+        ]
       },
       "slug": "design-code-architecture",
       "source": "wondel",
@@ -2310,7 +2430,9 @@
       "journeys": [],
       "name": "design-consultation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-consultation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-consultation/SKILL.md"
+        ]
       },
       "slug": "design-consultation",
       "source": "gstack",
@@ -2343,7 +2465,9 @@
       ],
       "name": "design-everyday-things",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-everyday-things/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-everyday-things/SKILL.md"
+        ]
       },
       "slug": "design-everyday-things",
       "source": "wondel",
@@ -2371,7 +2495,9 @@
       "journeys": [],
       "name": "design-html",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-html/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-html/SKILL.md"
+        ]
       },
       "slug": "design-html",
       "source": "gstack",
@@ -2397,7 +2523,9 @@
       "journeys": [],
       "name": "design-motion-principles",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-motion-principles/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-motion-principles/SKILL.md"
+        ]
       },
       "slug": "design-motion-principles",
       "source": "unknown",
@@ -2423,7 +2551,9 @@
       "journeys": [],
       "name": "design-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-review/SKILL.md"
+        ]
       },
       "slug": "design-review",
       "source": "gstack",
@@ -2449,7 +2579,9 @@
       "journeys": [],
       "name": "design-shotgun",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-shotgun/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-shotgun/SKILL.md"
+        ]
       },
       "slug": "design-shotgun",
       "source": "gstack",
@@ -2480,7 +2612,9 @@
       ],
       "name": "design-sprint",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-sprint/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-sprint/SKILL.md"
+        ]
       },
       "slug": "design-sprint",
       "source": "wondel",
@@ -2508,7 +2642,9 @@
       "journeys": [],
       "name": "design-system",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-system/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-system/SKILL.md"
+        ]
       },
       "slug": "design-system",
       "source": "claudekit",
@@ -2534,7 +2670,9 @@
       "journeys": [],
       "name": "design-taste-frontend",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/design-taste-frontend/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/design-taste-frontend/SKILL.md"
+        ]
       },
       "slug": "design-taste-frontend",
       "source": "unknown",
@@ -2560,7 +2698,9 @@
       "journeys": [],
       "name": "deslop-shared-libs",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/deslop-shared-libs/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/deslop-shared-libs/SKILL.md"
+        ]
       },
       "slug": "deslop-shared-libs",
       "source": "gstack",
@@ -2586,7 +2726,9 @@
       "journeys": [],
       "name": "devex-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/devex-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/devex-review/SKILL.md"
+        ]
       },
       "slug": "devex-review",
       "source": "gstack",
@@ -2612,7 +2754,9 @@
       "journeys": [],
       "name": "diagnosing-superpowers",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/diagnosing-superpowers/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/diagnosing-superpowers/SKILL.md"
+        ]
       },
       "slug": "diagnosing-superpowers",
       "source": "superpowers",
@@ -2638,7 +2782,9 @@
       "journeys": [],
       "name": "diagram",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/diagram/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/diagram/SKILL.md"
+        ]
       },
       "slug": "diagram",
       "source": "gstack",
@@ -2664,7 +2810,9 @@
       "journeys": [],
       "name": "dispatching-parallel-agents",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/dispatching-parallel-agents/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/dispatching-parallel-agents/SKILL.md"
+        ]
       },
       "slug": "dispatching-parallel-agents",
       "source": "superpowers",
@@ -2690,7 +2838,9 @@
       "journeys": [],
       "name": "document-generate",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/document-generate/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/document-generate/SKILL.md"
+        ]
       },
       "slug": "document-generate",
       "source": "gstack",
@@ -2716,7 +2866,9 @@
       "journeys": [],
       "name": "document-release",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/document-release/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/document-release/SKILL.md"
+        ]
       },
       "slug": "document-release",
       "source": "gstack",
@@ -2748,7 +2900,9 @@
       ],
       "name": "domain-driven-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/domain-driven-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/domain-driven-design/SKILL.md"
+        ]
       },
       "slug": "domain-driven-design",
       "source": "wondel",
@@ -2781,7 +2935,9 @@
       ],
       "name": "drive-motivation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/drive-motivation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/drive-motivation/SKILL.md"
+        ]
       },
       "slug": "drive-motivation",
       "source": "wondel",
@@ -2809,7 +2965,9 @@
       "journeys": [],
       "name": "eval-plan",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/eval-plan/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/eval-plan/SKILL.md"
+        ]
       },
       "slug": "eval-plan",
       "source": "gstack",
@@ -2835,7 +2993,9 @@
       "journeys": [],
       "name": "executing-plans",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/executing-plans/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/executing-plans/SKILL.md"
+        ]
       },
       "slug": "executing-plans",
       "source": "superpowers",
@@ -2861,7 +3021,9 @@
       "journeys": [],
       "name": "finishing-a-development-branch",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/finishing-a-development-branch/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/finishing-a-development-branch/SKILL.md"
+        ]
       },
       "slug": "finishing-a-development-branch",
       "source": "superpowers",
@@ -2887,7 +3049,9 @@
       "journeys": [],
       "name": "freeze",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/freeze/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/freeze/SKILL.md"
+        ]
       },
       "slug": "freeze",
       "source": "gstack",
@@ -2913,7 +3077,10 @@
       "journeys": [],
       "name": "frontend-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/frontend-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/frontend-design/SKILL.md",
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/frontend-design/ea10b213686c/skills/frontend-design/SKILL.md"
+        ]
       },
       "slug": "frontend-design",
       "source": "unknown",
@@ -2939,7 +3106,9 @@
       "journeys": [],
       "name": "gcp-to-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/gcp-to-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/gcp-to-aws/SKILL.md"
+        ]
       },
       "slug": "gcp-to-aws",
       "source": "aws-startup-advisor",
@@ -2970,7 +3139,9 @@
       ],
       "name": "good-strategy-bad-strategy",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/good-strategy-bad-strategy/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/good-strategy-bad-strategy/SKILL.md"
+        ]
       },
       "slug": "good-strategy-bad-strategy",
       "source": "wondel",
@@ -2998,7 +3169,9 @@
       "journeys": [],
       "name": "graphify",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/graphify/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/graphify/SKILL.md"
+        ]
       },
       "slug": "graphify",
       "source": "unknown",
@@ -3024,7 +3197,9 @@
       "journeys": [],
       "name": "grow-app",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/grow-app/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/grow-app/SKILL.md"
+        ]
       },
       "slug": "grow-app",
       "source": "wondel",
@@ -3052,7 +3227,9 @@
       "journeys": [],
       "name": "grow-business",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/grow-business/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/grow-business/SKILL.md"
+        ]
       },
       "slug": "grow-business",
       "source": "wondel",
@@ -3080,7 +3257,9 @@
       "journeys": [],
       "name": "grow-website",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/grow-website/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/grow-website/SKILL.md"
+        ]
       },
       "slug": "grow-website",
       "source": "wondel",
@@ -3108,7 +3287,9 @@
       "journeys": [],
       "name": "gstack",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/gstack/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/gstack/SKILL.md"
+        ]
       },
       "slug": "gstack",
       "source": "gstack",
@@ -3134,7 +3315,9 @@
       "journeys": [],
       "name": "gstack-upgrade",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/gstack-upgrade/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/gstack-upgrade/SKILL.md"
+        ]
       },
       "slug": "gstack-upgrade",
       "source": "unknown",
@@ -3160,7 +3343,9 @@
       "journeys": [],
       "name": "guard",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/guard/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/guard/SKILL.md"
+        ]
       },
       "slug": "guard",
       "source": "gstack",
@@ -3186,7 +3371,9 @@
       "journeys": [],
       "name": "health",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/health/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/health/SKILL.md"
+        ]
       },
       "slug": "health",
       "source": "gstack",
@@ -3212,7 +3399,9 @@
       "journeys": [],
       "name": "heroku-to-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/heroku-to-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/heroku-to-aws/SKILL.md"
+        ]
       },
       "slug": "heroku-to-aws",
       "source": "aws-startup-advisor",
@@ -3242,7 +3431,9 @@
       ],
       "name": "high-output-management",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/high-output-management/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/high-output-management/SKILL.md"
+        ]
       },
       "slug": "high-output-management",
       "source": "wondel",
@@ -3275,7 +3466,9 @@
       ],
       "name": "high-perf-browser",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/high-perf-browser/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/high-perf-browser/SKILL.md"
+        ]
       },
       "slug": "high-perf-browser",
       "source": "wondel",
@@ -3307,7 +3500,9 @@
       ],
       "name": "hooked-ux",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/hooked-ux/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/hooked-ux/SKILL.md"
+        ]
       },
       "slug": "hooked-ux",
       "source": "wondel",
@@ -3343,7 +3538,9 @@
       ],
       "name": "hundred-million-offers",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/hundred-million-offers/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/hundred-million-offers/SKILL.md"
+        ]
       },
       "slug": "hundred-million-offers",
       "source": "wondel",
@@ -3371,7 +3568,9 @@
       "journeys": [],
       "name": "improve-app",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/improve-app/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/improve-app/SKILL.md"
+        ]
       },
       "slug": "improve-app",
       "source": "wondel",
@@ -3399,7 +3598,9 @@
       "journeys": [],
       "name": "improve-business",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/improve-business/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/improve-business/SKILL.md"
+        ]
       },
       "slug": "improve-business",
       "source": "wondel",
@@ -3427,7 +3628,9 @@
       "journeys": [],
       "name": "improve-code-quality",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/improve-code-quality/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/improve-code-quality/SKILL.md"
+        ]
       },
       "slug": "improve-code-quality",
       "source": "wondel",
@@ -3459,7 +3662,9 @@
       ],
       "name": "improve-retention",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/improve-retention/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/improve-retention/SKILL.md"
+        ]
       },
       "slug": "improve-retention",
       "source": "wondel",
@@ -3487,7 +3692,9 @@
       "journeys": [],
       "name": "improve-website",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/improve-website/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/improve-website/SKILL.md"
+        ]
       },
       "slug": "improve-website",
       "source": "wondel",
@@ -3522,7 +3729,9 @@
       ],
       "name": "influence-psychology",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/influence-psychology/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/influence-psychology/SKILL.md"
+        ]
       },
       "slug": "influence-psychology",
       "source": "wondel",
@@ -3554,7 +3763,9 @@
       ],
       "name": "inspired-product",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/inspired-product/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/inspired-product/SKILL.md"
+        ]
       },
       "slug": "inspired-product",
       "source": "wondel",
@@ -3582,7 +3793,9 @@
       "journeys": [],
       "name": "investigate",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/investigate/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/investigate/SKILL.md"
+        ]
       },
       "slug": "investigate",
       "source": "gstack",
@@ -3608,7 +3821,9 @@
       "journeys": [],
       "name": "ios-clean",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-clean/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-clean/SKILL.md"
+        ]
       },
       "slug": "ios-clean",
       "source": "gstack",
@@ -3634,7 +3849,9 @@
       "journeys": [],
       "name": "ios-design-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-design-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-design-review/SKILL.md"
+        ]
       },
       "slug": "ios-design-review",
       "source": "gstack",
@@ -3660,7 +3877,9 @@
       "journeys": [],
       "name": "ios-fix",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-fix/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-fix/SKILL.md"
+        ]
       },
       "slug": "ios-fix",
       "source": "gstack",
@@ -3690,7 +3909,9 @@
       ],
       "name": "ios-hig-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-hig-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-hig-design/SKILL.md"
+        ]
       },
       "slug": "ios-hig-design",
       "source": "wondel",
@@ -3718,7 +3939,9 @@
       "journeys": [],
       "name": "ios-qa",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-qa/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-qa/SKILL.md"
+        ]
       },
       "slug": "ios-qa",
       "source": "gstack",
@@ -3744,7 +3967,9 @@
       "journeys": [],
       "name": "ios-sync",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ios-sync/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ios-sync/SKILL.md"
+        ]
       },
       "slug": "ios-sync",
       "source": "gstack",
@@ -3775,7 +4000,9 @@
       ],
       "name": "jobs-to-be-done",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/jobs-to-be-done/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/jobs-to-be-done/SKILL.md"
+        ]
       },
       "slug": "jobs-to-be-done",
       "source": "wondel",
@@ -3803,7 +4030,9 @@
       "journeys": [],
       "name": "knowledge-base-for-startups",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/knowledge-base-for-startups/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/knowledge-base-for-startups/SKILL.md"
+        ]
       },
       "slug": "knowledge-base-for-startups",
       "source": "aws-startup-advisor",
@@ -3829,7 +4058,9 @@
       "journeys": [],
       "name": "land-and-deploy",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/land-and-deploy/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/land-and-deploy/SKILL.md"
+        ]
       },
       "slug": "land-and-deploy",
       "source": "gstack",
@@ -3855,7 +4086,9 @@
       "journeys": [],
       "name": "landing-report",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/landing-report/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/landing-report/SKILL.md"
+        ]
       },
       "slug": "landing-report",
       "source": "gstack",
@@ -3881,7 +4114,9 @@
       "journeys": [],
       "name": "launch-with-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/launch-with-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/launch-with-aws/SKILL.md"
+        ]
       },
       "slug": "launch-with-aws",
       "source": "unknown",
@@ -3914,7 +4149,9 @@
       ],
       "name": "lean-analytics",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/lean-analytics/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/lean-analytics/SKILL.md"
+        ]
       },
       "slug": "lean-analytics",
       "source": "wondel",
@@ -3947,7 +4184,9 @@
       ],
       "name": "lean-startup",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/lean-startup/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/lean-startup/SKILL.md"
+        ]
       },
       "slug": "lean-startup",
       "source": "wondel",
@@ -3979,7 +4218,9 @@
       ],
       "name": "lean-ux",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/lean-ux/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/lean-ux/SKILL.md"
+        ]
       },
       "slug": "lean-ux",
       "source": "wondel",
@@ -4007,7 +4248,9 @@
       "journeys": [],
       "name": "learn",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/learn/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/learn/SKILL.md"
+        ]
       },
       "slug": "learn",
       "source": "unknown",
@@ -4033,7 +4276,9 @@
       "journeys": [],
       "name": "llm-to-bedrock",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/llm-to-bedrock/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/llm-to-bedrock/SKILL.md"
+        ]
       },
       "slug": "llm-to-bedrock",
       "source": "aws-startup-advisor",
@@ -4066,7 +4311,9 @@
       ],
       "name": "made-to-stick",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/made-to-stick/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/made-to-stick/SKILL.md"
+        ]
       },
       "slug": "made-to-stick",
       "source": "wondel",
@@ -4094,7 +4341,9 @@
       "journeys": [],
       "name": "make-pdf",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/make-pdf/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/make-pdf/SKILL.md"
+        ]
       },
       "slug": "make-pdf",
       "source": "gstack",
@@ -4123,7 +4372,9 @@
       ],
       "name": "microinteractions",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/microinteractions/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/microinteractions/SKILL.md"
+        ]
       },
       "slug": "microinteractions",
       "source": "wondel",
@@ -4156,7 +4407,9 @@
       ],
       "name": "mom-test",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/mom-test/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/mom-test/SKILL.md"
+        ]
       },
       "slug": "mom-test",
       "source": "wondel",
@@ -4189,7 +4442,9 @@
       ],
       "name": "monetizing-innovation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/monetizing-innovation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/monetizing-innovation/SKILL.md"
+        ]
       },
       "slug": "monetizing-innovation",
       "source": "wondel",
@@ -4220,7 +4475,9 @@
       ],
       "name": "negotiation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/negotiation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/negotiation/SKILL.md"
+        ]
       },
       "slug": "negotiation",
       "source": "wondel",
@@ -4252,7 +4509,9 @@
       ],
       "name": "obviously-awesome",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/obviously-awesome/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/obviously-awesome/SKILL.md"
+        ]
       },
       "slug": "obviously-awesome",
       "source": "wondel",
@@ -4280,7 +4539,9 @@
       "journeys": [],
       "name": "office-hours",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/office-hours/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/office-hours/SKILL.md"
+        ]
       },
       "slug": "office-hours",
       "source": "gstack",
@@ -4313,7 +4574,9 @@
       ],
       "name": "one-page-marketing",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/one-page-marketing/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/one-page-marketing/SKILL.md"
+        ]
       },
       "slug": "one-page-marketing",
       "source": "wondel",
@@ -4341,7 +4604,9 @@
       "journeys": [],
       "name": "open-gstack-browser",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/open-gstack-browser/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/open-gstack-browser/SKILL.md"
+        ]
       },
       "slug": "open-gstack-browser",
       "source": "unknown",
@@ -4367,7 +4632,9 @@
       "journeys": [],
       "name": "operate-on-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/operate-on-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/operate-on-aws/SKILL.md"
+        ]
       },
       "slug": "operate-on-aws",
       "source": "aws-startup-advisor",
@@ -4393,7 +4660,9 @@
       "journeys": [],
       "name": "pair-agent",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/pair-agent/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/pair-agent/SKILL.md"
+        ]
       },
       "slug": "pair-agent",
       "source": "gstack",
@@ -4419,7 +4688,9 @@
       "journeys": [],
       "name": "plan-ceo-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/plan-ceo-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/plan-ceo-review/SKILL.md"
+        ]
       },
       "slug": "plan-ceo-review",
       "source": "gstack",
@@ -4445,7 +4716,9 @@
       "journeys": [],
       "name": "plan-design-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/plan-design-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/plan-design-review/SKILL.md"
+        ]
       },
       "slug": "plan-design-review",
       "source": "gstack",
@@ -4471,7 +4744,9 @@
       "journeys": [],
       "name": "plan-devex-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/plan-devex-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/plan-devex-review/SKILL.md"
+        ]
       },
       "slug": "plan-devex-review",
       "source": "gstack",
@@ -4497,7 +4772,9 @@
       "journeys": [],
       "name": "plan-eng-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/plan-eng-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/plan-eng-review/SKILL.md"
+        ]
       },
       "slug": "plan-eng-review",
       "source": "gstack",
@@ -4523,7 +4800,9 @@
       "journeys": [],
       "name": "plan-tune",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/plan-tune/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/plan-tune/SKILL.md"
+        ]
       },
       "slug": "plan-tune",
       "source": "gstack",
@@ -4557,7 +4836,9 @@
       ],
       "name": "pragmatic-programmer",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/pragmatic-programmer/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/pragmatic-programmer/SKILL.md"
+        ]
       },
       "slug": "pragmatic-programmer",
       "source": "wondel",
@@ -4589,7 +4870,9 @@
       ],
       "name": "predictable-revenue",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/predictable-revenue/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/predictable-revenue/SKILL.md"
+        ]
       },
       "slug": "predictable-revenue",
       "source": "wondel",
@@ -4617,7 +4900,9 @@
       "journeys": [],
       "name": "prompt-library-for-startups",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/prompt-library-for-startups/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/prompt-library-for-startups/SKILL.md"
+        ]
       },
       "slug": "prompt-library-for-startups",
       "source": "aws-startup-advisor",
@@ -4643,7 +4928,9 @@
       "journeys": [],
       "name": "qa",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/qa/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/qa/SKILL.md"
+        ]
       },
       "slug": "qa",
       "source": "gstack",
@@ -4669,7 +4956,9 @@
       "journeys": [],
       "name": "qa-only",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/qa-only/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/qa-only/SKILL.md"
+        ]
       },
       "slug": "qa-only",
       "source": "gstack",
@@ -4695,7 +4984,9 @@
       "journeys": [],
       "name": "receiving-code-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/receiving-code-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/receiving-code-review/SKILL.md"
+        ]
       },
       "slug": "receiving-code-review",
       "source": "superpowers",
@@ -4727,7 +5018,9 @@
       ],
       "name": "refactoring-patterns",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/refactoring-patterns/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/refactoring-patterns/SKILL.md"
+        ]
       },
       "slug": "refactoring-patterns",
       "source": "wondel",
@@ -4761,7 +5054,9 @@
       ],
       "name": "refactoring-ui",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/refactoring-ui/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/refactoring-ui/SKILL.md"
+        ]
       },
       "slug": "refactoring-ui",
       "source": "wondel",
@@ -4796,7 +5091,9 @@
       ],
       "name": "release-it",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/release-it/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/release-it/SKILL.md"
+        ]
       },
       "slug": "release-it",
       "source": "wondel",
@@ -4824,7 +5121,9 @@
       "journeys": [],
       "name": "remove-technical-debt",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/remove-technical-debt/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/remove-technical-debt/SKILL.md"
+        ]
       },
       "slug": "remove-technical-debt",
       "source": "wondel",
@@ -4852,7 +5151,9 @@
       "journeys": [],
       "name": "requesting-code-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/requesting-code-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/requesting-code-review/SKILL.md"
+        ]
       },
       "slug": "requesting-code-review",
       "source": "superpowers",
@@ -4878,7 +5179,9 @@
       "journeys": [],
       "name": "retro",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/retro/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/retro/SKILL.md"
+        ]
       },
       "slug": "retro",
       "source": "gstack",
@@ -4904,7 +5207,9 @@
       "journeys": [],
       "name": "review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/review/SKILL.md"
+        ]
       },
       "slug": "review",
       "source": "gstack",
@@ -4935,7 +5240,9 @@
       ],
       "name": "scorecard-marketing",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/scorecard-marketing/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/scorecard-marketing/SKILL.md"
+        ]
       },
       "slug": "scorecard-marketing",
       "source": "wondel",
@@ -4963,7 +5270,9 @@
       "journeys": [],
       "name": "scrape",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/scrape/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/scrape/SKILL.md"
+        ]
       },
       "slug": "scrape",
       "source": "gstack",
@@ -4989,7 +5298,9 @@
       "journeys": [],
       "name": "setup-browser-cookies",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/setup-browser-cookies/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/setup-browser-cookies/SKILL.md"
+        ]
       },
       "slug": "setup-browser-cookies",
       "source": "gstack",
@@ -5015,7 +5326,9 @@
       "journeys": [],
       "name": "setup-deploy",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/setup-deploy/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/setup-deploy/SKILL.md"
+        ]
       },
       "slug": "setup-deploy",
       "source": "unknown",
@@ -5041,7 +5354,9 @@
       "journeys": [],
       "name": "setup-gbrain",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/setup-gbrain/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/setup-gbrain/SKILL.md"
+        ]
       },
       "slug": "setup-gbrain",
       "source": "gstack",
@@ -5067,7 +5382,9 @@
       "journeys": [],
       "name": "ship",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ship/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ship/SKILL.md"
+        ]
       },
       "slug": "ship",
       "source": "gstack",
@@ -5093,7 +5410,9 @@
       "journeys": [],
       "name": "signing-in-to-aws",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/signing-in-to-aws/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/signing-in-to-aws/SKILL.md"
+        ]
       },
       "slug": "signing-in-to-aws",
       "source": "unknown",
@@ -5119,8 +5438,12 @@
       "journeys": [],
       "name": "skill-finder",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/skill-finder/SKILL.md",
-        "codex": "/Users/tjthouhid/.codex/skills/skill-finder/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/skill-finder/SKILL.md"
+        ],
+        "codex": [
+          "/Users/tjthouhid/.codex/skills/skill-finder/SKILL.md"
+        ]
       },
       "slug": "skill-finder",
       "source": "tjthouhid",
@@ -5146,7 +5469,9 @@
       "journeys": [],
       "name": "skillify",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/skillify/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/skillify/SKILL.md"
+        ]
       },
       "slug": "skillify",
       "source": "gstack",
@@ -5172,7 +5497,9 @@
       "journeys": [],
       "name": "slides",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/slides/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/slides/SKILL.md"
+        ]
       },
       "slug": "slides",
       "source": "claudekit",
@@ -5207,7 +5534,9 @@
       ],
       "name": "software-design-philosophy",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/software-design-philosophy/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/software-design-philosophy/SKILL.md"
+        ]
       },
       "slug": "software-design-philosophy",
       "source": "wondel",
@@ -5235,7 +5564,9 @@
       "journeys": [],
       "name": "spec",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/spec/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/spec/SKILL.md"
+        ]
       },
       "slug": "spec",
       "source": "gstack",
@@ -5261,7 +5592,9 @@
       "journeys": [],
       "name": "start-building-for-startups",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/start-building-for-startups/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/start-building-for-startups/SKILL.md"
+        ]
       },
       "slug": "start-building-for-startups",
       "source": "aws-startup-advisor",
@@ -5292,7 +5625,9 @@
       ],
       "name": "steve-jobs-design-review",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/steve-jobs-design-review/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/steve-jobs-design-review/SKILL.md"
+        ]
       },
       "slug": "steve-jobs-design-review",
       "source": "wondel",
@@ -5328,7 +5663,9 @@
       ],
       "name": "storybrand-messaging",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/storybrand-messaging/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/storybrand-messaging/SKILL.md"
+        ]
       },
       "slug": "storybrand-messaging",
       "source": "wondel",
@@ -5356,7 +5693,9 @@
       "journeys": [],
       "name": "subagent-driven-development",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/subagent-driven-development/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/subagent-driven-development/SKILL.md"
+        ]
       },
       "slug": "subagent-driven-development",
       "source": "superpowers",
@@ -5382,7 +5721,9 @@
       "journeys": [],
       "name": "sync-gbrain",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/sync-gbrain/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/sync-gbrain/SKILL.md"
+        ]
       },
       "slug": "sync-gbrain",
       "source": "gstack",
@@ -5415,7 +5756,9 @@
       ],
       "name": "system-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/system-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/system-design/SKILL.md"
+        ]
       },
       "slug": "system-design",
       "source": "wondel",
@@ -5443,7 +5786,9 @@
       "journeys": [],
       "name": "systematic-debugging",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/systematic-debugging/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/systematic-debugging/SKILL.md"
+        ]
       },
       "slug": "systematic-debugging",
       "source": "superpowers",
@@ -5473,7 +5818,9 @@
       ],
       "name": "team-topologies",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/team-topologies/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/team-topologies/SKILL.md"
+        ]
       },
       "slug": "team-topologies",
       "source": "wondel",
@@ -5503,7 +5850,9 @@
       "journeys": [],
       "name": "technical-documentation",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/technical-documentation/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/technical-documentation/SKILL.md"
+        ]
       },
       "slug": "technical-documentation",
       "source": "wondel",
@@ -5531,7 +5880,9 @@
       "journeys": [],
       "name": "test-audit",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/test-audit/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/test-audit/SKILL.md"
+        ]
       },
       "slug": "test-audit",
       "source": "gstack",
@@ -5557,7 +5908,9 @@
       "journeys": [],
       "name": "test-driven-development",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/test-driven-development/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/test-driven-development/SKILL.md"
+        ]
       },
       "slug": "test-driven-development",
       "source": "superpowers",
@@ -5583,7 +5936,9 @@
       "journeys": [],
       "name": "tf-best-practices",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/tf-best-practices/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/claude-plugins-official/aws-startup-advisor/2.0.3/skills/tf-best-practices/SKILL.md"
+        ]
       },
       "slug": "tf-best-practices",
       "source": "aws-startup-advisor",
@@ -5613,7 +5968,9 @@
       ],
       "name": "top-design",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/top-design/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/top-design/SKILL.md"
+        ]
       },
       "slug": "top-design",
       "source": "wondel",
@@ -5645,7 +6002,9 @@
       ],
       "name": "traction-eos",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/traction-eos/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/traction-eos/SKILL.md"
+        ]
       },
       "slug": "traction-eos",
       "source": "wondel",
@@ -5673,7 +6032,9 @@
       "journeys": [],
       "name": "ui-styling",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ui-styling/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ui-styling/SKILL.md"
+        ]
       },
       "slug": "ui-styling",
       "source": "claudekit",
@@ -5699,7 +6060,9 @@
       "journeys": [],
       "name": "unfreeze",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/unfreeze/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/unfreeze/SKILL.md"
+        ]
       },
       "slug": "unfreeze",
       "source": "gstack",
@@ -5725,7 +6088,9 @@
       "journeys": [],
       "name": "using-git-worktrees",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/using-git-worktrees/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/using-git-worktrees/SKILL.md"
+        ]
       },
       "slug": "using-git-worktrees",
       "source": "superpowers",
@@ -5751,7 +6116,9 @@
       "journeys": [],
       "name": "using-superpowers",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/using-superpowers/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/using-superpowers/SKILL.md"
+        ]
       },
       "slug": "using-superpowers",
       "source": "superpowers",
@@ -5783,7 +6150,9 @@
       ],
       "name": "ux-heuristics",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/ux-heuristics/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/ux-heuristics/SKILL.md"
+        ]
       },
       "slug": "ux-heuristics",
       "source": "wondel",
@@ -5811,7 +6180,9 @@
       "journeys": [],
       "name": "vercel-react-best-practices",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/vercel-react-best-practices/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/vercel-react-best-practices/SKILL.md"
+        ]
       },
       "slug": "vercel-react-best-practices",
       "source": "vercel",
@@ -5837,7 +6208,9 @@
       "journeys": [],
       "name": "verification-before-completion",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/verification-before-completion/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/verification-before-completion/SKILL.md"
+        ]
       },
       "slug": "verification-before-completion",
       "source": "superpowers",
@@ -5863,7 +6236,9 @@
       "journeys": [],
       "name": "web-design-guidelines",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/web-design-guidelines/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/web-design-guidelines/SKILL.md"
+        ]
       },
       "slug": "web-design-guidelines",
       "source": "vercel",
@@ -5894,7 +6269,9 @@
       ],
       "name": "web-typography",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/web-typography/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/web-typography/SKILL.md"
+        ]
       },
       "slug": "web-typography",
       "source": "wondel",
@@ -5929,7 +6306,9 @@
       ],
       "name": "working-with-legacy-code",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/skills/working-with-legacy-code/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/skills/working-with-legacy-code/SKILL.md"
+        ]
       },
       "slug": "working-with-legacy-code",
       "source": "wondel",
@@ -5957,7 +6336,9 @@
       "journeys": [],
       "name": "writing-plans",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/writing-plans/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/writing-plans/SKILL.md"
+        ]
       },
       "slug": "writing-plans",
       "source": "superpowers",
@@ -5983,7 +6364,9 @@
       "journeys": [],
       "name": "writing-skills",
       "paths": {
-        "claude": "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/writing-skills/SKILL.md"
+        "claude": [
+          "/Users/tjthouhid/.claude/plugins/cache/superpowers-marketplace/superpowers/7.0.0/skills/writing-skills/SKILL.md"
+        ]
       },
       "slug": "writing-skills",
       "source": "superpowers",
