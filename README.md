@@ -1,5 +1,7 @@
 # Skill Finder
 
+Website: [tjthouhid.github.io/skill-finder](https://tjthouhid.github.io/skill-finder/)
+
 Skill Finder tells you which of your installed AI agent skills to use for a
 task, and how to install the ones you don't have yet.
 
@@ -35,7 +37,8 @@ alone doesn't say: a category, a "use when" line, install commands, and
 journeys. A *journey* is a skill that walks you through a whole project
 phase by phase using other skills, such as `create-website`. The first
 source is the [Wondel.ai skills catalogue](https://skills.wondel.ai/skills):
-51 skills, 14 journeys, and 8 example routes. A *route* is a suggested order
+51 skills, 14 journeys, and 8 example routes. Those skills belong to
+Wondel.ai, not to this project; see [Credits](#credits). A *route* is a suggested order
 of skills for a common situation, such as an online shop that loses
 customers at checkout.
 
@@ -150,7 +153,34 @@ The reply has the following parts:
 
 **Try this**
 : A ready-to-paste prompt, such as `Use cro-methodology to find where
-  shoppers leave checkout. Start with the smallest first step.`
+  shoppers leave checkout. Start with the smallest first step.` The last
+  sentence appears only when you fix or improve something that exists. For
+  a new project from scratch, the prompt asks for the whole design.
+
+### Sample commands
+
+The following table shows requests you can type in Claude Code and what
+Skill Finder returns. In Codex CLI, ask the same need in your own words.
+
+| You type | Skill Finder returns |
+|---|---|
+| `/skill-finder human type web design for my portfolio` | `top-design`, `web-typography`, and `refactoring-ui`, plus the `create-website` journey |
+| `/skill-finder my checkout page loses customers` | `cro-methodology` and `one-page-marketing`, plus the `conversion-optimization` journey |
+| `/skill-finder old untested code I'm scared to change` | `working-with-legacy-code` and `clean-code`, plus the `remove-technical-debt` journey |
+| `/skill-finder customers don't understand what we do` | `obviously-awesome`, `storybrand-messaging`, and `jobs-to-be-done` |
+| `/skill-finder build an online shop from scratch` | The `create-website` journey, with a prompt that asks for the whole design |
+| `/skill-finder how should I price my SaaS` | `monetizing-innovation` |
+| `Add these skills to skill finder: URL` | A table of the skills found at `URL`, to confirm before they're saved |
+| `Refresh the skill index` | A rebuilt index with counts per source |
+
+Replace `URL` with the address of a skill list, a file path, or pasted text.
+
+The results depend on the skills in your index. For each skill that you
+don't have, the reply includes an install line, such as the following:
+
+```text
+npx skills add wondelai/skills -s cro-methodology -g -a claude-code
+```
 
 ### Run the finder from a terminal
 
@@ -327,6 +357,29 @@ python3 -I -m unittest discover -s tests -t . -v
   description would use.
 - Add mode needs an agent to read and extract the list. No script does it.
 
+## Credits
+
+Skill Finder recommends skills that other people made. It doesn't include
+or redistribute any of them.
+
+- **Wondel.ai skills.** The 51 skills, 14 journeys, and 8 routes in
+  `skill-finder/data/sources/wondel.json` are made by
+  [Wondel.ai](https://skills.wondel.ai/skills) and published in
+  [wondelai/skills](https://github.com/wondelai/skills) under the MIT
+  License. The file stores only each skill's name, a short summary based on
+  Wondel.ai's catalogue, its category, and its install command. The install
+  command downloads the skill from Wondel.ai's repository, not from this
+  one. Skill Finder isn't affiliated with or endorsed by Wondel.ai.
+- **Skills on your machine.** Skill Finder reads the name and description
+  of each skill you have installed. Those skills belong to their authors;
+  Skill Finder only reports what you already have.
+- **The example index.** `skill-finder/data/skills.json` was built on the
+  author's machine, so it lists the names and descriptions of skills the
+  author has installed. Your own index replaces it the first time you run
+  Skill Finder.
+
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Skill Finder's own code and documentation are released under the MIT
+License. See [LICENSE](LICENSE). Skills by other authors keep their own
+licenses.
