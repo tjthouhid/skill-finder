@@ -46,6 +46,8 @@ customers at checkout.
 
 Queries run offline. Neither script uses the network.
 
+To see what changed between versions, read the [changelog](CHANGELOG.md).
+
 ## Before you begin
 
 - Python 3.9 or later, available as `python3`. The scripts use only the
@@ -339,6 +341,7 @@ The repository has the following structure:
 | `skill-finder/scripts/common.py` | The frontmatter parser and the source file loader. |
 | `skill-finder/data/sources/` | Curated source files and their schema. |
 | `skill-finder/data/skills.json` | The generated index. |
+| `CHANGELOG.md` | Changes that affect users, newest first. |
 | `tests/` | Unit tests and test fixtures. |
 | `docs/superpowers/` | The design spec and implementation plans. |
 
@@ -364,7 +367,8 @@ python3 -I -m unittest discover -s tests -t . -v
 
 - Ranking matches keywords and a small synonym list, not meaning. If a
   request returns nothing useful, rephrase it with the words a skill
-  description would use.
+  description would use. If Skill Finder picks the wrong skill, please
+  [report a bad recommendation](https://github.com/tjthouhid/skill-finder/issues/new?template=bad-recommendation.yml).
 - Add mode needs an agent to read and extract the list. No script does it.
 
 ## Credits

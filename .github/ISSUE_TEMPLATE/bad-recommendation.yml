@@ -1,0 +1,53 @@
+name: Bad recommendation
+description: Skill Finder suggested the wrong skill, or missed the right one.
+title: "Bad recommendation: "
+labels: ["ranking"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. To reproduce the ranking, run `find.py` in a terminal with the same request and paste its output below:
+
+        ```sh
+        python3 -I ~/.claude/skills/skill-finder/scripts/find.py "YOUR REQUEST" --tool claude
+        ```
+
+        For Codex CLI, use `~/.agents/skills/skill-finder` and `--tool codex`.
+  - type: input
+    id: query
+    attributes:
+      label: What you asked for
+      description: The request, in the words you used.
+      placeholder: my checkout page loses customers
+    validations:
+      required: true
+  - type: dropdown
+    id: tool
+    attributes:
+      label: Agent
+      options:
+        - Claude Code
+        - Codex CLI
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: The skill you expected
+      description: Its slug, and why it fits better.
+      placeholder: cro-methodology, because it diagnoses checkout drop-off
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: find.py output
+      description: The output of the command above. Remove anything private.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: For example, whether the expected skill is installed, or a curated source you added.
