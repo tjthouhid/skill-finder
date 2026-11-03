@@ -249,7 +249,8 @@ class IndexFreshnessTests(unittest.TestCase):
         rc, out, err = _run(idx)
         self.assertEqual(rc, 2)
         self.assertEqual(out, "")
-        self.assertIn("another machine or is stale", err)
+        self.assertIn("skills.json built for another machine", err)
+        self.assertNotIn("30 days", err)
         self.assertIn("build_index.py", err)
 
     def test_codex_only_roots_are_local(self):
@@ -270,6 +271,8 @@ class IndexFreshnessTests(unittest.TestCase):
     def test_stale_index_exit_2(self):
         rc, _, err = _run(_local_index(days_old=31))
         self.assertEqual(rc, 2)
+        self.assertIn("skills.json is more than 30 days old", err)
+        self.assertNotIn("another machine", err)
         self.assertIn("build_index.py", err)
 
     def test_fresh_local_index_ok(self):
@@ -280,7 +283,9 @@ class IndexFreshnessTests(unittest.TestCase):
     def test_bad_generated_at_is_stale(self):
         idx = _local_index()
         idx["generated_at"] = "yesterday"
-        self.assertEqual(_run(idx)[0], 2)
+        rc, _, err = _run(idx)
+        self.assertEqual(rc, 2)
+        self.assertIn("skills.json has no valid generated_at", err)
 
     def test_non_dict_index_exit_2(self):
         rc, _, err = _run([1, 2, 3])

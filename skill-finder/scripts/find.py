@@ -361,8 +361,9 @@ def main(argv=None):
     except (OSError, ValueError) as e:
         sys.stderr.write("cannot read %s (%s). Run: %s\n" % (path, e, build))
         return 2
-    if index_problem(index):
-        sys.stderr.write("skills.json was built for another machine or is stale. Run: %s\n" % build)
+    problem = index_problem(index)
+    if problem:
+        sys.stderr.write("skills.json %s. Run: %s\n" % (problem, build))
         return 2
     results = search(index, query, args.top)
     if args.as_json:
