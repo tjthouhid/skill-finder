@@ -312,12 +312,31 @@ class _Parser(argparse.ArgumentParser):
 
 
 def main(argv=None):
-    p = _Parser(prog="find.py", description="Find the right skill for a need.")
-    p.add_argument("query", nargs="*", help="what you want to do")
-    p.add_argument("--tool", choices=("claude", "codex"), default="claude")
-    p.add_argument("--top", type=int, default=8)
-    p.add_argument("--json", action="store_true", dest="as_json")
-    p.add_argument("--index", type=Path, default=None)
+    p = _Parser(
+        prog="find.py",
+        description="Find the right skill for a need.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "examples:\n"
+            '  find.py "my checkout page loses customers"\n'
+            '  find.py "build a landing page from scratch" --tool codex --top 2\n'
+            "\n"
+            "exit codes:\n"
+            "  0  results or 'No match.' printed\n"
+            "  1  empty query or invalid option\n"
+            "  2  index missing, unreadable, from another machine, or older\n"
+            "     than 30 days; the message names the rebuild command"
+        ),
+    )
+    p.add_argument("query", nargs="*", help="what you want to do, in your own words")
+    p.add_argument("--tool", choices=("claude", "codex"), default="claude",
+                   help="tool whose installed state and install commands to show (default: claude)")
+    p.add_argument("--top", type=int, default=8, metavar="N",
+                   help="number of skills and journeys to list, 1 or more (default: 8)")
+    p.add_argument("--json", action="store_true", dest="as_json",
+                   help="print full records as JSON instead of Markdown")
+    p.add_argument("--index", type=Path, default=None, metavar="PATH",
+                   help="index file to read (default: data/skills.json next to the scripts)")
     try:
         args = p.parse_args(argv)
     except SystemExit as e:

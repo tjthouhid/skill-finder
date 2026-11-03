@@ -282,11 +282,22 @@ class _Parser(argparse.ArgumentParser):
 
 
 def main(argv=None):
-    parser = _Parser(prog="build_index.py", description="Build data/skills.json.")
-    parser.add_argument("--data", help="data directory (default: <script>/../data)")
-    parser.add_argument("--claude-root", action="append", default=[], metavar="PATH")
-    parser.add_argument("--codex-root", action="append", default=[], metavar="PATH")
-    parser.add_argument("--quiet", action="store_true")
+    parser = _Parser(
+        prog="build_index.py",
+        description="Build data/skills.json from installed skills and curated sources.",
+        epilog="Run it after you install or remove skills.",
+    )
+    parser.add_argument("--data", metavar="DIR",
+                        help="data folder: reads DIR/sources/*.json, writes DIR/skills.json "
+                             "(default: data next to the scripts)")
+    parser.add_argument("--claude-root", action="append", default=[], metavar="PATH",
+                        help="Claude Code skills folder to scan; repeat for more. "
+                             "Any value replaces the defaults")
+    parser.add_argument("--codex-root", action="append", default=[], metavar="PATH",
+                        help="Codex CLI skills folder to scan; repeat for more. "
+                             "Any value replaces the defaults")
+    parser.add_argument("--quiet", action="store_true",
+                        help="skip the summary; source-file warnings still print")
     try:
         args = parser.parse_args(argv)
     except _UsageError as exc:
