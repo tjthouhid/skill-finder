@@ -404,6 +404,7 @@ footer { padding: 48px 0 0; overflow: hidden; }
             <div class="demo__reply" id="demo-reply" aria-live="polite">
               <div class="row in"><div class="row__k">Best fit</div><div class="row__v"><span class="slug">top-design</span><span class="tag">not installed</span><span class="why">Pushes a polished web design toward a distinctive, memorable art direction.</span></div></div>
               <div class="row in"><div class="row__k">Also</div><div class="row__v"><ul><li><span class="slug">web-typography</span> <span class="why">Readable type, line length and hierarchy.</span></li><li><span class="slug">refactoring-ui</span> <span class="why">Spacing, color and hierarchy that look intentional.</span></li></ul></div></div>
+              <div class="row in"><div class="row__k">Close call</div><div class="row__v"><ul><li>Pick <span class="slug">top-design</span> <span class="why">if you want a look people remember.</span></li><li>Pick <span class="slug">web-typography</span> <span class="why">if the words must read easily, page after page.</span></li></ul></div></div>
               <div class="row in"><div class="row__k">Journey</div><div class="row__v"><span class="slug">create-website</span><span class="tag">10 phases</span><span class="why">Blank page to a clear, designed, converting site.</span></div></div>
               <div class="row in"><div class="row__k">Install</div><div class="row__v"><ul><li class="install-line">npx skills add wondelai/skills -s top-design -g -a claude-code</li><li class="install-line">npx skills add wondelai/skills -s web-typography -g -a claude-code</li></ul></div></div>
               <div class="row row--try in"><div class="row__k">Try this</div><div class="row__v"><div class="try">Use top-design and web-typography to make a human-type web design for my portfolio.</div></div></div>
@@ -437,7 +438,7 @@ footer { padding: 48px 0 0; overflow: hidden; }
         <article class="answer" data-reveal>
           <div class="answer__n">i.</div>
           <h3>Which skill</h3>
-          <p>The best fit for your words, up to two more worth a look, and a guided journey when you're starting a whole project.</p>
+          <p>The best fit for your words, up to two more worth a look, and a guided journey when you're starting a whole project. Two skills nearly tied? It says so, and tells you when to pick each.</p>
           <code>Best fit: cro-methodology</code>
         </article>
         <article class="answer" data-reveal style="--d:.1s">
@@ -570,6 +571,7 @@ footer { padding: 48px 0 0; overflow: hidden; }
     { q: "human type web design for my portfolio",
       best: ["top-design", "Pushes a polished web design toward a distinctive, memorable art direction."],
       also: [["web-typography", "Readable type, line length and hierarchy."], ["refactoring-ui", "Spacing, color and hierarchy that look intentional."]],
+      close: [["top-design", "if you want a look people remember."], ["web-typography", "if the words must read easily, page after page."]],
       journey: ["create-website", "10 phases", "Blank page to a clear, designed, converting site."],
       install: [I("top-design"), I("web-typography")],
       tryThis: "Use top-design and web-typography to make a human-type web design for my portfolio." },
@@ -609,6 +611,7 @@ footer { padding: 48px 0 0; overflow: hidden; }
     const html = [
       row("Best fit", `<span class="slug">${esc(ex.best[0])}</span><span class="tag">not installed</span><span class="why">${esc(ex.best[1])}</span>`),
       row("Also", `<ul>${ex.also.map(([s, w]) => `<li><span class="slug">${esc(s)}</span> <span class="why">${esc(w)}</span></li>`).join("")}</ul>`),
+      ex.close ? row("Close call", `<ul>${ex.close.map(([s, w]) => `<li>Pick <span class="slug">${esc(s)}</span> <span class="why">${esc(w)}</span></li>`).join("")}</ul>`) : "",
       ex.journey ? row("Journey", `<span class="slug">${esc(ex.journey[0])}</span><span class="tag">${esc(ex.journey[1])}</span><span class="why">${esc(ex.journey[2])}</span>`) : "",
       row("Install", `<ul>${ex.install.map((l) => `<li class="install-line">${esc(l)}</li>`).join("")}</ul>`),
       row("Try this", `<div class="try">${esc(ex.tryThis)}</div><button class="copy" type="button" data-text="${esc(ex.tryThis)}">Copy prompt</button>`, "row--try")
