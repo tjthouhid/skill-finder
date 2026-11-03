@@ -14,8 +14,8 @@ SCRIPTS = ROOT / "skill-finder" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 from common import load_sources
 from build_index import build_index
-from find import (_bigrams, _clean_use_when, damp_common, expand, main, render_markdown,
-                  score_journey, score_skill, search, tokenize)
+from find import (_bigrams, _clean_use_when, close_call, damp_common, expand, main,
+                  render_markdown, score_journey, score_skill, search, tokenize)
 
 FIX = ROOT / "tests" / "fixtures"
 REAL_SOURCES = ROOT / "skill-finder" / "data" / "sources"
@@ -316,6 +316,36 @@ class UseWhenTests(unittest.TestCase):
         self.assertEqual(lines[i + 1], want)
         out_claude = render_markdown(search(INDEX, "build a landing page from scratch"), "claude", INDEX)
         self.assertNotIn("-s create-website", out_claude)
+
+
+class CloseCallTests(unittest.TestCase):
+    @staticmethod
+    def _skills(*scores):
+        return [(s, {"slug": "s%d" % n}) for n, s in enumerate(scores, 1)]
+
+    def test_close_call_lists_leaders_within_share_of_top(self):
+        self.assertEqual(close_call(self._skills(3.98, 3.97, 3.84, 1.37)), ["s1", "s2", "s3"])
+        self.assertEqual(close_call(self._skills(4.0, 3.9, 3.7)), ["s1", "s2"])
+
+    def test_close_call_empty_when_top_is_clear_or_alone(self):
+        self.assertEqual(close_call(self._skills(4.0, 3.5)), [])
+        self.assertEqual(close_call(self._skills(4.0)), [])
+        self.assertEqual(close_call([]), [])
+
+    def test_close_call_caps_at_three(self):
+        self.assertEqual(close_call(self._skills(4, 4, 4, 4)), ["s1", "s2", "s3"])
+
+    def test_render_shows_close_call_line_only_when_close(self):
+        res = {"skills": self._skills(3.98, 3.97, 1.0), "journeys": [], "routes": []}
+        out = render_markdown(res, "claude", INDEX)
+        self.assertIn("Close call: s1, s2", out)
+        res["skills"] = self._skills(4.0, 2.0)
+        self.assertNotIn("Close call", render_markdown(res, "claude", INDEX))
+
+    def test_json_has_close_call(self):
+        rc, out, _ = _run(_local_index(), "--json")
+        self.assertEqual(rc, 0)
+        self.assertIsInstance(json.loads(out)["close_call"], list)
 
 
 if __name__ == "__main__":

@@ -58,6 +58,9 @@ MIN_SCORE = 1.0
 # A term found in more skills than this share (and this count) is weak evidence: "design" alone
 COMMON_SHARE = 0.05
 COMMON_MIN = 5
+# Leading skills scoring within this share of the top score are a close call: let Use when decide
+CLOSE_SHARE = 0.05
+CLOSE_MAX = 3
 MAX_INDEX_AGE = timedelta(days=30)
 _USE_PREFIX = re.compile(r"^use\b(?:\s+(?:when|for|before|whenever|as|in)\b)?[:\s]*", re.I)
 
@@ -194,6 +197,15 @@ def search(index, query, top=8):
     return {"skills": skills, "journeys": journeys, "routes": routes}
 
 
+def close_call(skills):
+    """Return slugs of the leading skills within CLOSE_SHARE of the top score, or [] if the top is clear."""
+    if not skills:
+        return []
+    floor = skills[0][0] * (1 - CLOSE_SHARE)
+    close = [r["slug"] for s, r in skills[:CLOSE_MAX] if s >= floor]
+    return close if len(close) > 1 else []
+
+
 def _mark(flag):
     return "✓" if flag else "✗"
 
@@ -228,6 +240,10 @@ def render_markdown(results, tool, index):
             cmd = (rec.get("install") or {}).get(tool)
             if not inst.get(tool) and cmd:
                 lines.append("   Install (%s): %s" % (tool, cmd))
+        close = close_call(skills)
+        if close:
+            lines.append("Close call: %s (scores within %d%%; choose by Use when)"
+                         % (", ".join(close), round(CLOSE_SHARE * 100)))
     if journeys:
         lines.append("## Journeys")
         for n, (score, j) in enumerate(journeys, 1):
@@ -282,6 +298,7 @@ def _results_json(query, tool, results):
             dict({"score": round(s, 2), "slug": r["slug"]}, **{k: v for k, v in r.items() if k != "slug"})
             for s, r in results["skills"]
         ],
+        "close_call": close_call(results["skills"]),
         "journeys": [dict({"score": round(s, 2)}, **j) for s, j in results["journeys"]],
         "routes": results["routes"],
     }

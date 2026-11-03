@@ -21,7 +21,9 @@ Skill Finder has three parts:
 - **A ranker.** `find.py` scores every skill in the index against your
   request by keyword overlap and prints the best matches, with an install
   command for each one you're missing. Words that appear in many skills,
-  such as "design", count for less than rare words, such as "portfolio".
+  such as "design", count for less than rare words, such as "portfolio". When
+  the top skills score within 5% of each other, it flags them as a close
+  call, and `--json` lists them in `close_call`.
 - **A skill.** `SKILL.md` tells your agent when to run `find.py` and how to
   turn its output into a short recommendation.
 
@@ -144,6 +146,11 @@ The reply has the following parts:
 
 **Also consider**
 : Up to two more skills.
+
+**Close call**
+: When the top skills score within 5% of each other, one line per skill
+  that says when to pick it, for example "Pick `cro-methodology` if
+  shoppers reach checkout but don't finish."
 
 **Journey**
 : A guided project skill, when your request is a whole project.
