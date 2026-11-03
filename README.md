@@ -217,8 +217,11 @@ shortened):
 - Build a small local service website → one-page-marketing → ...
 ```
 
-When nothing matches, `find.py` prints `No match.` and the list of
-categories.
+When nothing matches, `find.py` prints `No match.`, the list of
+categories, and a hint to rephrase or rebuild the index.
+
+When an option is wrong or the query is empty, `find.py` names the problem
+and points to `find.py --help`.
 
 ## Add a curated skill list
 

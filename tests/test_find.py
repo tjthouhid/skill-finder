@@ -182,8 +182,10 @@ class FindTests(unittest.TestCase):
                 rc = main(["ওয়েবসাইট ডিজাইন 🎨", "--index", str(p)])
         self.assertEqual(rc, 0, err.getvalue())
         prefix = "No match. Categories: "
-        self.assertTrue(out.getvalue().startswith(prefix), out.getvalue())
-        listed = out.getvalue()[len(prefix):].strip().split(", ")
+        first, hint = out.getvalue().strip().split("\n")
+        self.assertTrue(first.startswith(prefix), first)
+        self.assertIn("build_index.py", hint)
+        listed = first[len(prefix):].split(", ")
         self.assertTrue(listed[0] and set(listed) <= set(INDEX["categories"]), listed)
 
     def test_missing_index_exit_2(self):
@@ -195,8 +197,18 @@ class FindTests(unittest.TestCase):
         self.assertIn("build_index.py", err.getvalue())
 
     def test_empty_query_exit_1(self):
-        with contextlib.redirect_stderr(io.StringIO()):
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
             self.assertEqual(main(["   "]), 1)
+        self.assertIn('find.py "', err.getvalue())
+
+    def test_usage_errors_point_to_help(self):
+        for argv, detail in ((["x", "--top", "0"], "got 0"), (["x", "--bogus"], "--bogus")):
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                self.assertEqual(main(argv), 1, argv)
+            self.assertIn(detail, err.getvalue(), argv)
+            self.assertIn("find.py --help", err.getvalue(), argv)
 
     def test_json_output(self):
         with tempfile.TemporaryDirectory() as d:

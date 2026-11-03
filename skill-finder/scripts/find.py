@@ -218,7 +218,11 @@ def _clean_use_when(text):
 def render_markdown(results, tool, index):
     skills, journeys = results["skills"], results["journeys"]
     if not skills and not journeys:
-        return "No match. Categories: " + ", ".join(index.get("categories", []))
+        return (
+            "No match. Categories: " + ", ".join(index.get("categories", [])) + "\n"
+            "Rephrase with words a skill description would use, or name a category above. "
+            "If you installed skills since the last build, rebuild the index with build_index.py."
+        )
     lines = []
     if skills:
         lines.append("## Skills")
@@ -307,7 +311,7 @@ def _results_json(query, tool, results):
 class _Parser(argparse.ArgumentParser):
     def error(self, message):
         self.print_usage(sys.stderr)
-        sys.stderr.write("find.py: error: %s\n" % message)
+        sys.stderr.write("find.py: error: %s\nRun find.py --help for options.\n" % message)
         raise SystemExit(1)
 
 
@@ -339,13 +343,13 @@ def main(argv=None):
                    help="index file to read (default: data/skills.json next to the scripts)")
     try:
         args = p.parse_args(argv)
+        query = " ".join(args.query).strip()
+        if not query:
+            p.error('give a need to search for, for example: find.py "my checkout page loses customers"')
+        if args.top < 1:
+            p.error("--top must be 1 or more, got %d" % args.top)
     except SystemExit as e:
         return e.code if isinstance(e.code, int) else 1
-    query = " ".join(args.query).strip()
-    if not query or args.top < 1:
-        p.print_usage(sys.stderr)
-        sys.stderr.write("find.py: a non-empty query and --top >= 1 are required\n")
-        return 1
     scripts = Path(__file__).resolve().parent
     path = args.index or scripts.parent / "data" / "skills.json"
     build = "python3 -I " + shlex.quote(str(scripts / "build_index.py"))

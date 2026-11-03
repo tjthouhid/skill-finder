@@ -301,7 +301,7 @@ def main(argv=None):
     try:
         args = parser.parse_args(argv)
     except _UsageError as exc:
-        print(f"build_index.py: {exc}", file=sys.stderr)
+        print(f"build_index.py: {exc}\nRun build_index.py --help for options.", file=sys.stderr)
         return 1
 
     data_dir = Path(args.data) if args.data else Path(__file__).resolve().parent.parent / "data"
